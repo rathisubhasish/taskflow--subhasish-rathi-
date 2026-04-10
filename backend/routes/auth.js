@@ -5,8 +5,6 @@ const bcrypt = require("bcryptjs");
 const { readDB, writeDB } = require("../middleware/dbHandler");
 const authenticate = require("../middleware/auth");
 
-const SECRET_KEY = "taskflow_secret_key";
-
 router.get("/users", authenticate, (req, res) => {
   const db = readDB();
   const userList = db.users.map(({ id, name, email }) => ({ id, name, email }));
@@ -43,9 +41,13 @@ router.post("/register", (req, res) => {
   db.users.push(newUser);
   writeDB(db);
 
-  const token = jwt.sign({ id: newUser.id, email: newUser.email }, SECRET_KEY, {
-    expiresIn: "24h",
-  });
+  const token = jwt.sign(
+    { id: newUser.id, email: newUser.email },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: "24h",
+    },
+  );
 
   res.status(201).json({
     user: { id: newUser.id, name, email },
@@ -70,9 +72,13 @@ router.post("/login", (req, res) => {
   const user = db.users.find((u) => u.email === email);
 
   if (user && bcrypt.compareSync(password, user.password)) {
-    const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, {
-      expiresIn: "24h",
-    });
+    const token = jwt.sign(
+      { id: user.id, email: user.email },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "24h",
+      },
+    );
 
     return res.json({
       user: { id: user.id, name: user.name, email: user.email },
