@@ -5,12 +5,21 @@ const authenticate = require("../middleware/auth");
 
 router.get("/", authenticate, (req, res) => {
   const db = readDB();
+  const userId = req.user.id;
 
-  const userProjects = db.projects.filter(
-    (project) => project.owner_id === req.user.id,
-  );
+  const accessibleProjects = db.projects.filter((project) => {
+    // 1. Check if they own the project
+    const isOwner = project.owner_id === userId;
 
-  res.json({ projects: userProjects });
+    // 2. Check if they are assigned to any task in this project
+    const isAssignee = db.tasks.some(
+      (task) => task.project_id === project.id && task.assignee_id === userId,
+    );
+
+    return isOwner || isAssignee;
+  });
+
+  res.json({ projects: accessibleProjects });
 });
 
 router.post("/", authenticate, (req, res) => {
