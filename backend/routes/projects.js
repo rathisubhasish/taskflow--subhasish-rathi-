@@ -5,7 +5,12 @@ const authenticate = require("../middleware/auth");
 
 router.get("/", authenticate, (req, res) => {
   const db = readDB();
-  res.json({ projects: db.projects });
+
+  const userProjects = db.projects.filter(
+    (project) => project.owner_id === req.user.id,
+  );
+
+  res.json({ projects: userProjects });
 });
 
 router.post("/", authenticate, (req, res) => {
