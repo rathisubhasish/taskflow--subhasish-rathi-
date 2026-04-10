@@ -1,13 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Building TaskFlow — a minimal but real task management system. Users can register, log in, create projects, add tasks to those projects, and assign tasks to themselves or others.",
+  "description": "Building TaskFlow — a minimal but real task management system.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Subhasish Rathi",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -16,5 +18,8 @@
     "dotenv": "^17.4.1",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
