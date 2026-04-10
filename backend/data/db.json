@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": "u1775854741426",
+      "name": "Subhasish Rathi",
+      "email": "rathi@taskflow.com",
+      "password": "$2b$10$bZDaz2Gyrh0/KsETe7XrJuJhHSAUeeJpuXuPR.HycTAvkDz7rVg0G",
+      "created_at": "2026-04-10T20:59:01.538Z"
+    },
+    {
+      "id": "u1775854823491",
+      "name": "Ankit Kumar",
+      "email": "ankit@taskflow.com",
+      "password": "$2b$10$fCvL1R9HSc3fvljYlVMKveTv9AAHfMZ6PRThWuPSBMyXxFR5CufIS",
+      "created_at": "2026-04-10T21:00:23.572Z"
+    },
+    {
+      "id": "u1775857792916",
+      "name": "Ankit Kumar2",
+      "email": "ankit@taskflow2.com",
+      "password": "$2b$10$hqw1aUeV9wRhRlRfEqn3vu3taPFJHIdRuzdVkjrL6IjvVdHdh1DY.",
+      "created_at": "2026-04-10T21:49:53.115Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "p1775854926256",
+      "name": "TaskFlow Pro",
+      "description": "Full Stack Engineering Assignment",
+      "owner_id": "u1775854741426",
+      "created_at": "2026-04-10T21:02:06.256Z"
+    },
+    {
+      "id": "p1775854966110",
+      "name": "E-Commerce Front",
+      "description": "Next.js and Tailwind project",
+      "owner_id": "u1775854823491",
+      "created_at": "2026-04-10T21:02:46.110Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1775857228102",
+      "project_id": "p1775854926256",
+      "creator_id": "u1775854741426",
+      "title": "Implement User Auth2",
+      "description": "Using JWT and local storage",
+      "status": "todo",
+      "priority": "high",
+      "assignee_id": "u1775854741426",
+      "due_date": "2026-04-15",
+      "created_at": "2026-04-10T21:40:28.102Z",
+      "updated_at": "2026-04-10T21:40:28.102Z"
+    }
+  ]
+}
