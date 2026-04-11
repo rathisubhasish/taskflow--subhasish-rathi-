@@ -1,30 +1,30 @@
 import { BsThreeDots } from "react-icons/bs";
-import { Card } from "./ui/Card";
-import { Chip } from "./ui/Chip";
+import { Card } from "../../../components/ui/Card";
+import { Chip } from "../../../components/ui/Chip";
 import {
   BOARD_STATUSES,
   getDueDateStatus,
   getTaskStatusColor,
-} from "../utils/utils";
-import { useRef, useState } from "react";
-import Popover from "./ui/Popover";
+} from "../../../utils/utils";
+import React, { useRef, useState } from "react";
+import Popover from "../../../components/ui/Popover";
 import type { Task } from "../types";
-import { useUsers } from "../hooks/useUsers";
+import { useUsers } from "../../../hooks/useUsers";
 import { FaTrash } from "react-icons/fa";
-import UserPopover from "./UsersPopover";
+import UserPopover from "../../../components/UsersPopover";
 import { FaUserCircle } from "react-icons/fa";
+import type { RootState } from "../../../store";
 import { useSelector } from "react-redux";
-import type { RootState } from "../store";
 
 type TaskProps = {
   task: Task;
   onTaskClick?: (task: Task) => void;
   onDelete?: (taskId: string) => void;
-  statusUpdate?: (taskId: string) => void;
+  statusUpdate?: (taskId: string, currentStatus: string) => void;
   onAssigneeUpdate?: (taskId: string, userId: string) => void;
 };
 
-const Task: React.FC<TaskProps> = ({
+const TaskCard: React.FC<TaskProps> = ({
   onTaskClick,
   task,
   onDelete,
@@ -105,7 +105,7 @@ const Task: React.FC<TaskProps> = ({
               onClick={(e) => handleStatus(e)}
             >
               <p className="font-medium px-2 py-2">Change Status</p>
-              {BOARD_STATUSES.map((item, index) => (
+              {BOARD_STATUSES.map((item) => (
                 <p
                   className={`w-full text-left uppercase cursor-pointer px-2 py-1 ${item === task.status ? "bg-primary/70 text-white" : " hover:bg-gray-100"}`}
                   key={item}
@@ -162,4 +162,4 @@ const Task: React.FC<TaskProps> = ({
   );
 };
 
-export default Task;
+export default React.memo(TaskCard);

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import * as api from "../api/projects.api"; // Ensure API is imported
-import type { Project } from "../types";
+import * as api from "../api/tasks.api"; // Ensure API is imported
+import type { Project } from "../../projects/types";
 
 export const useProjectDetails = (projectId: string | undefined) => {
   const [project, setProject] = useState<Project | null>(null);
@@ -11,7 +11,7 @@ export const useProjectDetails = (projectId: string | undefined) => {
     if (!projectId) return;
 
     try {
-      const data = await api.getProjectDetails(projectId);
+      const data = await api.getProjectWithTaskDetails(projectId);
       setProject(data);
     } catch (err) {
       console.error("Failed to fetch project details:", err);
@@ -39,5 +39,5 @@ export const useProjectDetails = (projectId: string | undefined) => {
     };
   }, [refresh]);
 
-  return { project, loading, refresh };
+  return { project, loading, refresh, setProject };
 };

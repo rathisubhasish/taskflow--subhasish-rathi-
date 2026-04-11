@@ -1,5 +1,5 @@
-import axiosInstance from "./axiosInstance";
-import type { Task, TaskStatus } from "../types";
+import axiosInstance from "../../../api/axiosInstance";
+import type { ProjectDetail, Task, TaskStatus } from "../types";
 
 interface TaskFilters {
   status?: TaskStatus;
@@ -38,5 +38,12 @@ export const updateTask = async (
   updates: Partial<Task>,
 ): Promise<Task> => {
   const res = await axiosInstance.patch(`/tasks/${taskId}`, updates);
+  return res.data;
+};
+
+export const getProjectWithTaskDetails = async (
+  id: string,
+): Promise<ProjectDetail> => {
+  const res = await axiosInstance.get(`/projects/${id}`);
   return res.data;
 };

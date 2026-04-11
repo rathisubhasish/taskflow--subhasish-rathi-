@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import * as tasksApi from "../api/tasks.api";
-import { useNotify } from "./useNotify";
 import type { Task } from "../types";
+import { useNotify } from "../../../hooks/useNotify";
 
 export const useTasks = (projectId: string, onUpdate: () => void) => {
   const [loading, setLoading] = useState(false);

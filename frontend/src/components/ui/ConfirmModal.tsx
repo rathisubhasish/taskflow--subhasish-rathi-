@@ -1,6 +1,6 @@
 import React, { useState } from "react"; // 1. Import useState
 import { FiAlertTriangle } from "react-icons/fi";
-import Button from "./ui/Button";
+import Button from "./Button";
 
 interface Props {
   isOpen: boolean;

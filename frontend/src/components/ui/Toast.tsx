@@ -23,7 +23,7 @@ const Toast = () => {
   };
 
   return (
-    <div className="fixed top-6 right-0 -translate-x-1/2 z-[9999] transition-all duration-300">
+    <div className="fixed top-10 left-1/2 -translate-x-1/2 z-[9999] transition-all duration-300">
       <div
         className={`flex items-center gap-3 px-5 py-3 rounded-2xl border shadow animate-in fade-in slide-in-from-bottom-4 ${bgColors[toast.type]}`}
       >

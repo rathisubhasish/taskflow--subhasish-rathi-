@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { FiX, FiFlag, FiCalendar, FiType, FiAlignLeft } from "react-icons/fi";
-import type { Task } from "../types";
-import Input from "./ui/Input";
-import Button from "./ui/Button";
+import type { Task } from "../../../types";
+import Input from "../../../components/ui/Input";
+import Button from "../../../components/ui/Button";
 
 interface Props {
   isOpen: boolean;

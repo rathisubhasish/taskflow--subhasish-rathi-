@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { privateRoutes } from "./routes/config";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import Layout from "./components/Layout";
+import Layout from "./routes/Layout";
 import Landing from "./pages/Landing";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
