@@ -1,11 +1,11 @@
-import { useEffect, useCallback, useRef } from "react"; // Added useRef
+import { useEffect, useCallback, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../../store";
 import {
   fetchProjectsStart,
   fetchProjectsSuccess,
   fetchProjectsFailure,
-  removeProject, // Ensure this is in your slice
+  removeProject,
 } from "../../../store/projectSlice";
 import {
   getProjects,
@@ -14,7 +14,7 @@ import {
 
 export const useProjects = () => {
   const dispatch = useDispatch();
-  const hasFetched = useRef(false); // Fix for infinite loops
+  const hasFetched = useRef(false);
 
   const { items, loading, error } = useSelector(
     (state: RootState) => state.projects,
@@ -31,7 +31,6 @@ export const useProjects = () => {
     }
   }, [dispatch]);
 
-  // NEW: Delete functionality
   const handleDeleteProject = useCallback(
     async (id: string) => {
       try {
@@ -50,8 +49,6 @@ export const useProjects = () => {
   );
 
   useEffect(() => {
-    // Check ref to ensure we only trigger the initial load ONCE per mount
-    // This stops the loop if items.length stays at 0
     if (!hasFetched.current && items.length === 0) {
       loadProjects();
       hasFetched.current = true;
@@ -63,6 +60,6 @@ export const useProjects = () => {
     loading,
     error,
     refreshProjects: loadProjects,
-    deleteProject: handleDeleteProject, // Export this
+    deleteProject: handleDeleteProject,
   };
 };

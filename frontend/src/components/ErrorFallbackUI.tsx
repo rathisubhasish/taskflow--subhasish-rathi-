@@ -1,4 +1,3 @@
-// src/components/ErrorFallback.tsx
 import Button from "./ui/Button";
 
 const ErrorFallback = ({

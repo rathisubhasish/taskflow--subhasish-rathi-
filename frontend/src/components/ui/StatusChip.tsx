@@ -27,7 +27,6 @@ export default function StatusChip({ status, onChange }: Props) {
 
   return (
     <div className="relative inline-block" ref={ref}>
-      {/* Trigger */}
       <Button
         onClick={(e) => {
           e.stopPropagation();
@@ -39,7 +38,6 @@ export default function StatusChip({ status, onChange }: Props) {
         {status}
       </Button>
 
-      {/* Popover */}
       {open && (
         <div className="absolute right-0 bottom-6 w-36 bg-white border border-slate-200 rounded-lg shadow-lg z-20">
           {allStatuses.map((s) => (

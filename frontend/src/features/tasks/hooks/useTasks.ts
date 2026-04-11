@@ -7,10 +7,6 @@ export const useTasks = (projectId: string, onUpdate: () => void) => {
   const [loading, setLoading] = useState(false);
   const { notify } = useNotify();
 
-  /**
-   * Unified helper for API operations.
-   * Cleans up error parsing to support standard Axios error structures.
-   */
   const executeAction = useCallback(
     async (action: () => Promise<any>, successMsg: string) => {
       if (loading) return;
@@ -23,7 +19,6 @@ export const useTasks = (projectId: string, onUpdate: () => void) => {
       } catch (err: any) {
         const errorData = err.response?.data || err;
 
-        // 1. Check if fields exists AND has at least one key
         const hasFieldErrors =
           errorData?.fields && Object.keys(errorData.fields).length > 0;
 
@@ -31,9 +26,7 @@ export const useTasks = (projectId: string, onUpdate: () => void) => {
           const firstField = Object.keys(errorData.fields)[0];
           const fieldMessage = errorData.fields[firstField];
           notify(`${firstField} ${fieldMessage}`, "error");
-        }
-        // 2. Fallback to the main message if fields is empty or missing
-        else {
+        } else {
           notify(errorData?.message || "Something went wrong", "error");
         }
 

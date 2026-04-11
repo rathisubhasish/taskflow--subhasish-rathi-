@@ -7,7 +7,6 @@ const Toast = () => {
   const dispatch = useDispatch();
   const toast = useSelector((state: RootState) => state.ui.toast);
 
-  // Guard clause for null state or hidden status
   if (!toast || !toast.isVisible) return null;
 
   const icons = {

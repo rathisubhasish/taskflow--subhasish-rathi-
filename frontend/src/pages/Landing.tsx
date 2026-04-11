@@ -1,4 +1,3 @@
-// src/pages/Landing.tsx
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import type { RootState } from "../store";
@@ -16,7 +15,6 @@ const Landing = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
       <header className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="text-center">
@@ -51,14 +49,12 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Subtle background decoration */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-30 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-200 rounded-full blur-[120px]" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-[120px]" />
         </div>
       </header>
 
-      {/* Feature Grid */}
       <section className="py-20 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -100,7 +96,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-12 text-center text-slate-400 text-sm">
         &copy; 2026 TaskFlow Inc. Built with React & Redux.
       </footer>

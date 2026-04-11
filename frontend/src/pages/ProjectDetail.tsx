@@ -30,11 +30,10 @@ const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { notify } = useNotify();
 
-  // 1. Hook State
+  // Hook State
   const { loadUsers, users } = useUsers();
   const { project, loading, refresh, setProject } = useProjectDetails(id);
 
-  // We pass a dummy function because we handle refresh manually for better UX
   const {
     handleCreate,
     handleDelete,
@@ -42,13 +41,13 @@ const ProjectDetail: React.FC = () => {
     loading: isActionLoading,
   } = useTasks(id!, () => {});
 
-  // 2. UI State
+  // UI State
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
   const [taskToDelete, setTaskToDelete] = useState<string | null>(null);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  // 3. Filter State
+  // Filter State
   const [searchQuery, setSearchQuery] = useState("");
   const [priorityFilter, setPriorityFilter] = useState<string>("all");
   const [selectedAssignees, setSelectedAssignees] = useState<string[]>([]);

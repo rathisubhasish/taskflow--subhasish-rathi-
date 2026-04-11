@@ -87,7 +87,6 @@ const TaskCard: React.FC<TaskProps> = ({
               left: position.left,
             }}
           >
-            {/* Edit */}
             <button
               onClick={() => {
                 onTaskClick?.(task);
@@ -98,7 +97,6 @@ const TaskCard: React.FC<TaskProps> = ({
               ✏️ <span>Edit</span>
             </button>
 
-            {/* Divider */}
             <hr />
             <div
               className="w-full flex flex-col py-1"
@@ -116,7 +114,6 @@ const TaskCard: React.FC<TaskProps> = ({
               ))}
             </div>
             <hr />
-            {/* Delete */}
             {isOwner && (
               <button
                 onClick={() => {

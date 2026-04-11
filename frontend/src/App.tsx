@@ -1,4 +1,3 @@
-// src/App.tsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { privateRoutes } from "./routes/config";
 import ProtectedRoute from "./routes/ProtectedRoute";
@@ -8,7 +7,6 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Toast from "./components/ui/Toast";
 
-// src/App.tsx
 function App() {
   return (
     <>

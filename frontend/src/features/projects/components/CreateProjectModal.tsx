@@ -47,7 +47,6 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
       <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
-        {/* Header - Matches TaskFormModal */}
         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
           <div className="flex items-center gap-2">
             <FiBriefcase className="text-indigo-600" />
@@ -62,18 +61,16 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="p-6 space-y-5">
-          {/* Project Name */}
           <div className="space-y-1">
             <Input
               label="Project Name *"
               icon={<FiType />}
               placeholder="e.g. Q3 Marketing Campaign"
               {...register("name", { required: "Project name is required" })}
-              error={errors.name?.message as string} // Assuming your Input component handles 'error' prop
+              error={errors.name?.message as string}
             />
           </div>
 
-          {/* Description */}
           <div className="space-y-2">
             <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
               <FiAlignLeft /> Description
@@ -85,8 +82,6 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
               placeholder="What is this project about? (Optional)"
             />
           </div>
-
-          {/* Actions - Shared Button Component Usage */}
           <div className="flex gap-3 pt-4">
             <Button
               type="button"
@@ -109,7 +104,6 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
             </Button>
           </div>
 
-          {/* Validation Helper */}
           {!isValid && (
             <p className="text-[10px] text-center text-slate-400 font-medium animate-pulse">
               Please provide a project name to continue.

@@ -67,7 +67,6 @@ const Register = () => {
             </div>
           )}
 
-          {/* Full Name Input */}
           <Input
             label="Full Name"
             placeholder="Jane Doe"
@@ -76,7 +75,6 @@ const Register = () => {
             {...register("name", { required: "Name is required" })}
           />
 
-          {/* Email Input */}
           <Input
             label="Email Address"
             type="email"
@@ -92,7 +90,6 @@ const Register = () => {
             })}
           />
 
-          {/* Password Input with Visibility Toggle */}
           <div className="relative">
             <Input
               label="Password"

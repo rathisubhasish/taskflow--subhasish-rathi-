@@ -1,12 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
-import * as api from "../api/tasks.api"; // Ensure API is imported
+import * as api from "../api/tasks.api";
 import type { Project } from "../../projects/types";
 
 export const useProjectDetails = (projectId: string | undefined) => {
   const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
-  // 1. Define the refresh logic
   const refresh = useCallback(async () => {
     if (!projectId) return;
 
@@ -20,7 +19,6 @@ export const useProjectDetails = (projectId: string | undefined) => {
     }
   }, [projectId]);
 
-  // 2. Separate the initial mount logic
   useEffect(() => {
     let isMounted = true;
 

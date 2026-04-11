@@ -29,9 +29,8 @@ const projectSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    // Add this to update the list when a new project is created
     addProject: (state, action: PayloadAction<Project>) => {
-      state.items.unshift(action.payload); // Adds to the beginning of the list
+      state.items.unshift(action.payload);
     },
     removeProject: (state, action: PayloadAction<string>) => {
       state.items = state.items.filter(

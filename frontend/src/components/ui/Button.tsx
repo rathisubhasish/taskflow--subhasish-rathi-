@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
-// --- Types ---
-
 type ButtonBaseProps = {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "danger" | "ghost";
@@ -27,11 +25,7 @@ type ButtonAsLink = ButtonBaseProps & {
 
 export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
-// --- Styles ---
-
 const variantStyles = {
-  // Ensure these colors exist in your tailwind config.
-  // If "primary" is a custom color, ensure it's defined.
   primary: "bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500",
   secondary:
     "bg-slate-200 text-slate-900 hover:bg-slate-300 focus:ring-slate-400",
@@ -55,7 +49,6 @@ const LoadingDots = () => (
 );
 
 export default function Button(props: ButtonProps) {
-  // 1. Destructure all potential custom props so they don't leak to HTML elements
   const {
     children,
     variant = "primary",
@@ -70,7 +63,6 @@ export default function Button(props: ButtonProps) {
   const baseStyles =
     "inline-flex items-center justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed border border-transparent";
 
-  // 2. twMerge will ensure variantStyles are applied unless overridden by className prop
   const classes = twMerge(
     baseStyles,
     variantStyles[variant],
@@ -90,11 +82,9 @@ export default function Button(props: ButtonProps) {
     </>
   );
 
-  // 🔗 NEXT.JS LINK MODE
   if ("href" in props) {
     const { href, onClick, ...rest } = props as ButtonAsLink;
 
-    // Remove custom props from the rest object to avoid React warnings on the DOM
     const {
       variant: _,
       size: __,
@@ -124,10 +114,8 @@ export default function Button(props: ButtonProps) {
     );
   }
 
-  // 🔘 STANDARD BUTTON MODE
   const { type = "button", onClick, ...rest } = props as ButtonAsButton;
 
-  // Clean custom props
   const {
     variant: _,
     size: __,
