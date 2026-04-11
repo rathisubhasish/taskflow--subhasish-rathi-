@@ -18,7 +18,6 @@ const Input = forwardRef(
   ) => {
     return (
       <div className={twMerge("w-full flex flex-col gap-1", wrapperClassName)}>
-        {/* Label */}
         {label && (
           <label
             className={twMerge(
@@ -31,7 +30,6 @@ const Input = forwardRef(
           </label>
         )}
 
-        {/* Input */}
         <input
           ref={ref}
           type={type}
@@ -48,7 +46,6 @@ const Input = forwardRef(
           {...props}
         />
 
-        {/* Error Message */}
         {error && (
           <div
             className={twMerge(

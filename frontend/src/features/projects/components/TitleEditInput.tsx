@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 interface TitleEditInputProps {
   value: string;
   onChange: (val: string) => void;
-  canEdit: boolean; // New prop for permission check
+  canEdit: boolean;
   className?: string;
 }
 
@@ -22,7 +22,6 @@ export default function TitleEditInput({
 
   const save = () => {
     setIsEditing(false);
-    // Extra safety: only trigger onChange if they are allowed to edit
     if (canEdit && draft !== value) {
       onChange?.(draft);
     }

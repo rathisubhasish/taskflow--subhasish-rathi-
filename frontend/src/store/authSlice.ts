@@ -9,7 +9,6 @@ interface AuthState {
   loading: boolean;
 }
 
-// Helper to safely parse user from localStorage
 const getStoredUser = (): User | null => {
   const storedUser = localStorage.getItem("taskflow_user");
   if (!storedUser) return null;
@@ -53,11 +52,9 @@ const authSlice = createSlice({
       state.accessToken = null;
       state.isAuthenticated = false;
 
-      // Cleanup storage
       localStorage.removeItem("taskflow_token");
       localStorage.removeItem("taskflow_user");
     },
-    // Optional: Useful if you need to manually toggle a loading spinner
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },

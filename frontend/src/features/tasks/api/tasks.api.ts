@@ -16,7 +16,6 @@ export const getProjectTasks = async (
   return res.data;
 };
 
-// Omit the fields the backend generates (id, created_at, etc.)
 export const createTask = async (
   projectId: string,
   taskData: Omit<Task, "id" | "created_at" | "updated_at" | "project_id">,

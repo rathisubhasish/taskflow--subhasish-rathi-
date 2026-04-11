@@ -4,7 +4,6 @@ import { useAuth } from "../hooks/useAuth";
 const ProtectedRoute = () => {
   const { isAuthenticated, loading } = useAuth();
 
-  // If we are still checking the token in localStorage, show nothing or a spinner
   if (loading) {
     return (
       <div className="flex h-screen items-center justify-center">

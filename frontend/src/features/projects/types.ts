@@ -1,7 +1,7 @@
 export interface Project {
-  id: string; // uuid
+  id: string;
   name: string;
-  description?: string; // optional
-  owner_id: string; // uuid -> User
-  created_at: string; // timestamp
+  description?: string;
+  owner_id: string;
+  created_at: string;
 }

@@ -7,7 +7,6 @@ export const useAuth = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Use 'accessToken' to match your slice
   const { user, accessToken, isAuthenticated, loading } = useSelector(
     (state: RootState) => state.auth,
   );

@@ -1,11 +1,11 @@
-import React, { useState } from "react"; // 1. Import useState
+import React, { useState } from "react";
 import { FiAlertTriangle } from "react-icons/fi";
 import Button from "./Button";
 
 interface Props {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: () => Promise<void> | void; // 3. Allow async function
+  onConfirm: () => Promise<void> | void;
   title: string;
   message: string;
   confirmText?: string;
@@ -19,14 +19,14 @@ const ConfirmModal: React.FC<Props> = ({
   message,
   confirmText = "Delete",
 }) => {
-  const [loading, setLoading] = useState(false); // 4. Local loading state
+  const [loading, setLoading] = useState(false);
 
   if (!isOpen) return null;
 
   const handleConfirm = async () => {
     setLoading(true);
     try {
-      await onConfirm(); // Wait for the parent's logic to finish
+      await onConfirm();
       onClose();
     } catch (error) {
       console.error("Confirm action failed:", error);
@@ -47,7 +47,6 @@ const ConfirmModal: React.FC<Props> = ({
           <p className="text-slate-500 text-sm leading-relaxed">{message}</p>
         </div>
 
-        {/* 5. Using your custom Button component for built-in loading support */}
         <div className="flex border-t border-slate-100">
           <Button
             type="button"

@@ -55,13 +55,11 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 
   return (
     <>
-      {/* 1. Backdrop for Mobile Overlay */}
       <div
         className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[110] md:hidden animate-in fade-in duration-300"
         onClick={() => setIsOpen(false)}
       />
 
-      {/* 2. Main Container */}
       <div
         className={`
         fixed inset-x-0 bottom-0 z-[120] bg-white rounded-t-[2.5rem] flex flex-col max-h-[92vh]
@@ -69,7 +67,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
         animate-in slide-in-from-bottom md:slide-in-from-top duration-300 overflow-hidden
       `}
       >
-        {/* Mobile Handle / Header */}
         <div className="md:hidden flex flex-col items-center pt-3 pb-2 border-b border-slate-100">
           <div className="w-12 h-1.5 bg-slate-200 rounded-full mb-4" />
           <div className="flex justify-between items-center w-full px-6">
@@ -85,7 +82,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* Desktop Close Button */}
         <Button
           onClick={() => setIsOpen(false)}
           className="hidden md:flex p-2 bg-slate-100 absolute top-4 right-4 z-10 hover:bg-slate-200 rounded-full text-slate-400"
@@ -94,7 +90,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
         </Button>
 
         <div className="p-6 flex flex-col gap-6 md:gap-8 overflow-y-auto md:overflow-visible custom-scrollbar pt-12">
-          {/* Top Row: Search and Quick Actions */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="relative w-full md:max-w-md order-2 md:order-1">
               <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
@@ -118,9 +113,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
             </div>
           </div>
 
-          {/* Main Filters Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 md:pb-0">
-            {/* Column 1: Priority */}
             <div className="space-y-4">
               <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Priority Level
@@ -143,7 +136,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               </div>
             </div>
 
-            {/* Column 2: Assignees */}
             <div className="bg-slate-50/50 p-4 rounded-2xl md:bg-transparent md:p-0">
               <CheckboxGroup
                 title="Team Members"
@@ -153,7 +145,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               />
             </div>
 
-            {/* Column 3: Deadlines */}
             <div className="space-y-4">
               <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 Deadlines
@@ -196,7 +187,6 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           </div>
         </div>
 
-        {/* Desktop Footer Info */}
         <div className="hidden md:flex px-6 py-3 bg-slate-50 border-t border-slate-100 justify-between items-center">
           <p className="text-[11px] text-slate-400 font-medium italic">
             * Filters are applied automatically to the board view below.

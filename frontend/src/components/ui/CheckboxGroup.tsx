@@ -25,7 +25,6 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
         {title}
       </h3>
 
-      {/* Scrollable Container */}
       <div className="space-y-1 max-h-60 overflow-y-auto pr-2 custom-scrollbar">
         {options.map((option) => {
           const isSelected = selectedValues.includes(option.id);
@@ -64,7 +63,6 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
           );
         })}
 
-        {/* Empty state for search/filter */}
         {options.length === 0 && (
           <p className="text-xs text-slate-400 italic p-2 text-center">
             No members found.

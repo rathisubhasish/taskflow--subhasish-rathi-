@@ -7,8 +7,8 @@ import { setAuth } from "../../store/authSlice";
 import type { RootState } from "../../store";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { loginUser } from "../../api/auth.api";
-import Button from "../../components/ui/Button"; // ✅ Imported
-import Input from "../../components/ui/Input"; // ✅ Imported
+import Button from "../../components/ui/Button";
+import Input from "../../components/ui/Input";
 
 const Login = () => {
   const {
@@ -16,7 +16,7 @@ const Login = () => {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm<LoginCredentials>(); // Added type safety
+  } = useForm<LoginCredentials>();
 
   const [apiError, setApiError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +76,6 @@ const Login = () => {
             </div>
           )}
 
-          {/* Email Input */}
           <Input
             label="Email Address"
             type="email"
@@ -86,7 +85,6 @@ const Login = () => {
             {...register("email", { required: "Email is required" })}
           />
 
-          {/* Password Input with Visibility Toggle */}
           <div className="relative">
             <Input
               label="Password"

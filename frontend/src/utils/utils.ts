@@ -1,4 +1,4 @@
-import type { TaskStatus } from "../types";
+import type { TaskStatus } from "../features/tasks/types";
 
 export const getTaskStatusColor = (status = "") => {
   const normalized = String(status).toLowerCase().replace(/[_-]/g, " ").trim();
@@ -38,7 +38,6 @@ export const getPriorityStatusColor = (status = "") => {
 };
 
 export const getDueDateStatus = (dueDate?: string, status?: string) => {
-  // 1. If the task is finished, don't show countdowns
   if (status === "completed") {
     return "Completed";
   }
@@ -68,10 +67,6 @@ export const getDueDateStatus = (dueDate?: string, status?: string) => {
 
 export const BOARD_STATUSES: TaskStatus[] = ["todo", "inprogress", "completed"];
 
-/**
- * Debounce: Wait until the user stops calling the function for 'delay' ms.
- * Perfect for: Search inputs, window resizing.
- */
 export const debounce = <T extends (...args: any[]) => any>(
   func: T,
   delay: number,
@@ -83,24 +78,5 @@ export const debounce = <T extends (...args: any[]) => any>(
     timeoutId = setTimeout(() => {
       func(...args);
     }, delay);
-  };
-};
-
-/**
- * Throttle: Ensure the function is called at most once every 'limit' ms.
- * Perfect for: Scroll events, button spamming (like your Task Delete button).
- */
-export const throttle = <T extends (...args: any[]) => any>(
-  func: T,
-  limit: number,
-) => {
-  let inThrottle: boolean;
-
-  return (...args: Parameters<T>) => {
-    if (!inThrottle) {
-      func(...args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
   };
 };

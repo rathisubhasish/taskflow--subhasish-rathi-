@@ -23,7 +23,6 @@ const BoardColumn: React.FC<BoardColumnProps> = ({
 }) => {
   return (
     <div className="w-full flex flex-col h-full min-h-[500px] bg-slate-50/50 rounded-3xl p-2 border border-slate-100">
-      {/* Column Header */}
       <div className="flex justify-between items-center p-3 mb-2">
         <div className="flex items-center gap-2 w-full">
           <div
@@ -38,7 +37,6 @@ const BoardColumn: React.FC<BoardColumnProps> = ({
         </div>
       </div>
 
-      {/* Drop Zone */}
       <Droppable droppableId={status}>
         {(provided, snapshot) => (
           <div

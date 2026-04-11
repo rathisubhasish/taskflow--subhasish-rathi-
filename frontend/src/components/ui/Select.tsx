@@ -29,7 +29,6 @@ export default function Select({
         </label>
       )}
 
-      {/* Trigger */}
       <button
         type="button"
         onClick={() => setOpen(!open)}
@@ -52,7 +51,6 @@ export default function Select({
         </svg>
       </button>
 
-      {/* Dropdown */}
       {open && (
         <div
           className="absolute z-50 mt-1 w-full bg-white border border-slate-200 

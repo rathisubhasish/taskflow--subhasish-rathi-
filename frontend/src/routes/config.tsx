@@ -5,7 +5,7 @@ import ProjectDetail from "../pages/ProjectDetail";
 export interface RouteConfig {
   path: string;
   element: React.ReactNode;
-  label?: string; // Useful for generating Navbar links automatically
+  label?: string;
 }
 
 export const privateRoutes: RouteConfig[] = [

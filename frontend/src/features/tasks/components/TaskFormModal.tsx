@@ -28,7 +28,6 @@ const TaskFormModal: React.FC<Props> = ({
 
   const isEditMode = !!initialData;
 
-  // --- 1. Validation Logic ---
   const isFormValid = useMemo(() => {
     return (
       formData.title?.trim() !== "" &&
@@ -70,7 +69,6 @@ const TaskFormModal: React.FC<Props> = ({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
       <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
-        {/* Header */}
         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
           <h2 className="text-xl font-bold text-slate-800">
             {isEditMode ? "Edit Task" : "New Task"}
@@ -84,7 +82,6 @@ const TaskFormModal: React.FC<Props> = ({
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-5">
-          {/* Title */}
           <Input
             label="Title *"
             icon={<FiType />}
@@ -95,7 +92,6 @@ const TaskFormModal: React.FC<Props> = ({
             }
           />
 
-          {/* Description */}
           <div className="space-y-2">
             <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
               <FiAlignLeft /> Description *
@@ -113,7 +109,6 @@ const TaskFormModal: React.FC<Props> = ({
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            {/* Priority */}
             <div className="space-y-2">
               <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
                 <FiFlag /> Priority *
@@ -131,7 +126,6 @@ const TaskFormModal: React.FC<Props> = ({
               </select>
             </div>
 
-            {/* Date */}
             <Input
               type="date"
               label="Due Date *"
@@ -143,7 +137,6 @@ const TaskFormModal: React.FC<Props> = ({
             />
           </div>
 
-          {/* Actions */}
           <div className="flex gap-3 pt-4">
             <Button
               type="button"
@@ -166,7 +159,6 @@ const TaskFormModal: React.FC<Props> = ({
             </Button>
           </div>
 
-          {/* Helper message for the user */}
           {!isFormValid && (
             <p className="text-[10px] text-center text-slate-400 font-medium animate-pulse">
               Please fill in all marked fields (*) to continue.

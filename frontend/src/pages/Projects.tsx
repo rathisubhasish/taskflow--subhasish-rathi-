@@ -11,7 +11,7 @@ import { useNotify } from "../hooks/useNotify";
 import ConfirmModal from "../components/ui/ConfirmModal";
 
 const Projects = () => {
-  const { projects, loading, deleteProject, refreshProjects } = useProjects();
+  const { projects, loading, deleteProject } = useProjects();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [projectToDelete, setProjectToDelete] = useState<string | null>(null);
   const { getAssigneeName } = useUsers();
@@ -23,10 +23,12 @@ const Projects = () => {
       await deleteProject(projectToDelete);
       setProjectToDelete(null);
       notify("Project deleted");
-    } catch (error: any) {
-      notify(error.message);
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "An unexpected error occurred";
+      notify(message);
     }
-  }, [projectToDelete, refreshProjects, notify]);
+  }, [projectToDelete, deleteProject, notify]);
 
   return (
     <>
