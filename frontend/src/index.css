@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #cbd5e1;
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1 {
+  @apply text-2xl md:text-4xl font-semibold tracking-tight;
+}
+
+h2 {
+  @apply text-xl md:text-3xl font-semibold;
+}
+
+h3 {
+  @apply text-lg md:text-2xl font-medium;
+}
+
+h4 {
+  @apply text-base md:text-xl font-medium;
+}
+
+p {
+  @apply text-sm md:text-base leading-relaxed text-gray-700 break-words;
+}
