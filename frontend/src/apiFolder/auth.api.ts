@@ -1,9 +1,9 @@
-import axiosInstance from "./axiosInstance";
 import type {
   LoginCredentials,
   RegisterCredentials,
   AuthResponse,
 } from "../types";
+import axiosInstance from "./axiosInstance";
 
 export const loginUser = async (
   data: LoginCredentials,

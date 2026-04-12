@@ -3,11 +3,11 @@ import { privateRoutes } from "./routes/config";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Layout from "./routes/Layout";
 import Landing from "./pages/Landing";
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
 import Toast from "./components/ui/Toast";
 import { useEffect } from "react";
 import { useAppSelector } from "./store";
+import Login from "./pages/authFolder/Login";
+import Register from "./pages/authFolder/Register";
 
 function App() {
   const { theme } = useAppSelector((state) => state.ui);
