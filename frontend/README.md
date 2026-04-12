@@ -2,6 +2,10 @@
 
 TaskFlow is a high-performance, enterprise-grade project management application built with **React**, **TypeScript**, and **Redux Toolkit**. It features a smooth Kanban board experience with optimistic UI updates, persistent theme support, and a secure session management architecture.
 
+![Dashboard Preview](./projectimages/15.png)
+
+### ALL PROJECT IMAGES ARE MENTIONED AT THE END
+
 ## 🚀 Key Features
 
 - **Kanban Board Engine:** Full **Drag & Drop** task updates using `@hello-pangea/dnd` with specialized columns for `Todo`, `In-Progress`, and `Completed`.
@@ -136,3 +140,37 @@ Seeded user credentials so you can log in immediately without registering:
 Email:    test@example.com
 Password: password123
 ```
+
+
+### Project Images
+![Dashboard Preview](./projectimages/1.png)
+![Dashboard Preview](./projectimages/2.png)
+![Dashboard Preview](./projectimages/3.png)
+![Dashboard Preview](./projectimages/4.png)
+![Dashboard Preview](./projectimages/5.png)
+![Dashboard Preview](./projectimages/6.png)
+![Dashboard Preview](./projectimages/7.png)
+![Dashboard Preview](./projectimages/8.png)
+![Dashboard Preview](./projectimages/9.png)
+![Dashboard Preview](./projectimages/10.png)
+![Dashboard Preview](./projectimages/11.png)
+![Dashboard Preview](./projectimages/12.png)
+![Dashboard Preview](./projectimages/13.png)
+![Dashboard Preview](./projectimages/14.png)
+![Dashboard Preview](./projectimages/15.png)
+![Dashboard Preview](./projectimages/16.png)
+![Dashboard Preview](./projectimages/17.png)
+![Dashboard Preview](./projectimages/18.png)
+![Dashboard Preview](./projectimages/19.png)
+![Dashboard Preview](./projectimages/20.png)
+![Dashboard Preview](./projectimages/21.png)
+![Dashboard Preview](./projectimages/22.png)
+![Dashboard Preview](./projectimages/23.png)
+![Dashboard Preview](./projectimages/24.png)
+![Dashboard Preview](./projectimages/25.png)
+![Dashboard Preview](./projectimages/26.png)
+![Dashboard Preview](./projectimages/27.png)
+![Dashboard Preview](./projectimages/28.png)
+![Dashboard Preview](./projectimages/29.png)
+![Dashboard Preview](./projectimages/30.png)
+![Dashboard Preview](./projectimages/31.png)
