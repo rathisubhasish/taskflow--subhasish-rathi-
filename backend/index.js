@@ -11,10 +11,10 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/auth", authRoutes);
-app.use("/projects", projectRoutes);
-app.use("/tasks", taskRoutes);
-app.use("/dashboard", dashboardRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/projects", projectRoutes);
+app.use("/api/v1/tasks", taskRoutes);
+app.use("/api/v1/dashboard", dashboardRoutes);
 
 app.listen(process.env.PORT, () =>
   console.log(`🚀 Backend: http://localhost:${process.env.PORT}`),
