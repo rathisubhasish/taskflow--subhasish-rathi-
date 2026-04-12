@@ -1,3 +1,7 @@
-# Frontend taskflow--subhasish-rathi-
+# TaskFlow — Professional Kanban Management (Frontend Task + Mock Backend)
 
-Building TaskFlow — a minimal but real task management system. Users can register, log in, create projects, add tasks to those projects, and assign tasks to themselves or others.
+TaskFlow is a high-performance, enterprise-grade project management application built with **React**, **TypeScript**, and **Redux Toolkit**. It features a smooth Kanban board experience with optimistic UI updates, persistent theme support, and a secure session management architecture.
+
+![Dashboard Preview](./frontend/projectimages/1.png)
+
+### ALL PROJECT IMAGES ARE THERE IN FOLDERS README
