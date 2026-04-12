@@ -22,6 +22,10 @@ services:
       - "4000:4000"
     environment:
       - NODE_ENV=production
+      - PORT=4000
+      - JWT_SECRET=your_jwt_secret_key_change_this_in_production
+    env_file:
+      - ./backend/.env
     volumes:
       - ./backend/data:/app/data
     networks:
