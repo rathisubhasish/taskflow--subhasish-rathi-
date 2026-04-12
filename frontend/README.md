@@ -103,40 +103,6 @@ src/
 
 
 
-````
-
-### Installation
-Clone the repository
-
-```bash
-git clone https://github.com/your-username/taskflow-subhasish.git
-```
-```bash
-cd taskflow-subhasish
-```
-### Set up Environment Variables
-
-```bash
-cp .env.example .env
-```
-### Launch the Application
-```bash
-docker compose up --build
-```
-
-### The app is now live!
-
-```bash
-Frontend: http://localhost:3000
-Backend API: http://localhost:5000
-```
-
-### Test User Credentials
-Seeded user credentials so you can log in immediately without registering:
-```
-Email:    test@example.com
-Password: password123
-```
 
 
 ### Project Images
