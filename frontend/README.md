@@ -97,13 +97,15 @@ src/
 
 
 
-### Installation
 
+
+````
+
+### Installation
 1. **Clone the repository**
    ```bash
    git clone [https://github.com/your-username/taskflow-frontend.git](https://github.com/your-username/taskflow-frontend.git)
    cd taskflow-frontend
-````
 
 2. **Install dependencies**
 
@@ -123,6 +125,14 @@ src/
    npm run dev
    ```
 
+
 ```
 
+```
+
+### Test User Credentials
+Seeded user credentials so you can log in immediately without registering:
+```
+Email:    test@example.com
+Password: password123
 ```
