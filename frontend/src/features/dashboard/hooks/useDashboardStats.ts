@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { fetchDashboardStats } from "../api/dashboard.api";
+import { fetchDashboardStats } from "../apiFolder/dashboard.api";
 import type { DashboardStats } from "../types";
 import { useNotify } from "../../../hooks/useNotify";
 

@@ -1,4 +1,4 @@
-import axiosInstance from "../../../api/axiosInstance";
+import axiosInstance from "../../../apiFolder/axiosInstance";
 import type { DashboardStats } from "../types";
 
 export const fetchDashboardStats = async (): Promise<DashboardStats> => {

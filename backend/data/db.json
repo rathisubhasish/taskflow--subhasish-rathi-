@@ -88,13 +88,6 @@
       "created_at": "2026-04-12T09:31:50.045Z"
     },
     {
-      "id": "p1775986734049",
-      "name": "ZenithFlow",
-      "description": "",
-      "owner_id": "u1775983074880",
-      "created_at": "2026-04-12T09:38:54.049Z"
-    },
-    {
       "id": "p1775986771480",
       "name": "OrbitEdge",
       "description": "",
@@ -121,6 +114,14 @@
       "description": "",
       "owner_id": "u1775983045908",
       "created_at": "2026-04-12T10:08:16.056Z"
+    },
+    {
+      "id": "p1775999629913",
+      "name": "ZenithFlow",
+      "description": "testing",
+      "owner_id": "u1775983074880",
+      "created_at": "2026-04-12T13:13:49.914Z",
+      "updated_at": "2026-04-12T13:13:58.304Z"
     }
   ],
   "tasks": [
@@ -208,12 +209,12 @@
       "creator_id": "u1775983034988",
       "title": "Team Formation",
       "description": "Assign roles and responsibilities",
-      "status": "inprogress",
+      "status": "completed",
       "priority": "medium",
       "assignee_id": "u1775983085670",
       "due_date": "2026-05-01",
       "created_at": "2026-04-12T09:46:10.601Z",
-      "updated_at": "2026-04-12T10:11:37.888Z"
+      "updated_at": "2026-04-12T13:09:39.373Z"
     },
     {
       "id": "t1775987199381",

@@ -22,7 +22,7 @@ import FilterSection from "../features/tasks/components/FilterSection";
 import { BOARD_STATUSES, debounce } from "../utils/utils";
 import type { Task, TaskStatus } from "../features/tasks/types";
 import { useAppSelector } from "../store";
-import { updateProject } from "../features/projects/api/projects.api";
+import { updateProject } from "../features/projects/apiFolder/projects.api";
 import { BiLeftArrow } from "react-icons/bi";
 import ConfirmModal from "../components/ui/ConfirmModal";
 

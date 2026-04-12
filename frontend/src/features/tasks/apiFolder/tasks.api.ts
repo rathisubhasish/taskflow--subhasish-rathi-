@@ -1,4 +1,4 @@
-import axiosInstance from "../../../api/axiosInstance";
+import axiosInstance from "../../../apiFolder/axiosInstance";
 import type { ProjectDetail, Task, TaskStatus } from "../types";
 
 interface TaskFilters {

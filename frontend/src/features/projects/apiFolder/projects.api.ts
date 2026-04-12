@@ -1,4 +1,4 @@
-import axiosInstance from "../../../api/axiosInstance";
+import axiosInstance from "../../../apiFolder/axiosInstance";
 import type { Project } from "../types";
 
 export const getProjects = async (): Promise<Project[]> => {

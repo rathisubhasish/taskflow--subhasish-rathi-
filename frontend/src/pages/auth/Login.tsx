@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { ApiError, LoginCredentials } from "../../types";
 import { setAuth } from "../../store/authSlice";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { loginUser } from "../../api/auth.api";
+import { loginUser } from "../../apiFolder/auth.api";
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";
 import { useAppDispatch, useAppSelector } from "../../store";

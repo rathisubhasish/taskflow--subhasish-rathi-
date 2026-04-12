@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import * as api from "../api/tasks.api";
+import * as api from "../apiFolder/tasks.api";
 import type { Project } from "../../projects/types";
 
 export const useProjectDetails = (projectId: string | undefined) => {

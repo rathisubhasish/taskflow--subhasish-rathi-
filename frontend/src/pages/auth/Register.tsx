@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axiosInstance from "../../api/axiosInstance";
+import axiosInstance from "../../apiFolder/axiosInstance";
 import { setAuth } from "../../store/authSlice";
 import type { AuthResponse, RegisterCredentials } from "../../types";
 import { FiEye, FiEyeOff } from "react-icons/fi";

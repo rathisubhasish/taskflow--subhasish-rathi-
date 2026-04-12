@@ -8,7 +8,7 @@ import {
 import {
   getProjects,
   deleteProject as deleteProjectApi,
-} from "../api/projects.api";
+} from "../apiFolder/projects.api";
 import { useAppDispatch, useAppSelector } from "../../../store";
 
 export const useProjects = () => {
