@@ -81,17 +81,17 @@ src/
 │   ├── auth/           # Authentication
 │   │   ├── components/ # Login/Register forms
 │   │   ├── hooks/      # useAuth specific logic
-│   │   ├── apis/       # Auth-specific endpoints
+│   │   ├── apiFolder/       # Auth-specific endpoints
 │   │   └── types/      # Auth interfaces
 │   ├── projects/       # Dashboard and Project management
 │   │   ├── components/ # Project cards, Dashboard UI
 │   │   ├── hooks/      # useProjects logic
-│   │   ├── apis/       # Project-specific endpoints
+│   │   ├── apiFolder/       # Project-specific endpoints
 │   │   └── types/      # Project interfaces
 │   └── tasks/          # Kanban board, Task cards, and Filters
 │       ├── components/ # Kanban columns, Task cards
 │       ├── hooks/      # useTasks and Drag-and-Drop logic
-│       ├── apis/       # Task-specific endpoints
+│       ├── apiFolder/       # Task-specific endpoints
 │       └── types/      # Task interfaces
 ├── hooks/              # Global utility hooks (useNotify, useUsers, useTheme)
 ├── store/              # Redux logic (Slices & Root Reducer)
@@ -106,32 +106,29 @@ src/
 ````
 
 ### Installation
-1. **Clone the repository**
-   ```bash
-   git clone [https://github.com/your-username/taskflow-frontend.git](https://github.com/your-username/taskflow-frontend.git)
-   cd taskflow-frontend
+Clone the repository
 
-2. **Install dependencies**
+```bash
+git clone https://github.com/your-username/taskflow-subhasish.git
+```
+```bash
+cd taskflow-subhasish
+```
+### Set up Environment Variables
 
-   ```bash
-   npm install
-   ```
-
-3. **Set up Environment Variables**
-   Create a `.env` file in the root directory:
-
-   ```env
-   VITE_API_URL=http://localhost:4000
-   ```
-
-4. **Run in Development**
-   ```bash
-   npm run dev
-   ```
-
-
+```bash
+cp .env.example .env
+```
+### Launch the Application
+```bash
+docker compose up --build
 ```
 
+### The app is now live!
+
+```bash
+Frontend: http://localhost:3000
+Backend API: http://localhost:5000
 ```
 
 ### Test User Credentials
