@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-import { getAllUsers } from "../api/users.api";
+import { getAllUsers } from "../apiFolder/users.api";
 import {
   fetchUsersStart,
   fetchUsersSuccess,

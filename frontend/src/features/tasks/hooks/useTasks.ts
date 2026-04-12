@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import * as tasksApi from "../api/tasks.api";
+import * as tasksApi from "../apiFolder/tasks.api";
 import type { Task } from "../types";
 import { useNotify } from "../../../hooks/useNotify";
 

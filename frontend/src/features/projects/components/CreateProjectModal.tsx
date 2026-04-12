@@ -4,7 +4,7 @@ import { FiX, FiType, FiAlignLeft, FiBriefcase } from "react-icons/fi";
 import { useNotify } from "../../../hooks/useNotify";
 import Input from "../../../components/ui/Input";
 import Button from "../../../components/ui/Button";
-import { createProject } from "../api/projects.api";
+import { createProject } from "../apiFolder/projects.api";
 import { addProject } from "../../../store/projectSlice";
 import { useAppDispatch } from "../../../store";
 
