@@ -1,6 +1,8 @@
+export type ThemeMode = "light" | "dark";
+
 export interface LoginCredentials {
   email: string;
-  password?: string; // Optional if you handle it dynamically, but usually required
+  password?: string;
 }
 
 export interface RegisterCredentials extends LoginCredentials {
@@ -8,11 +10,11 @@ export interface RegisterCredentials extends LoginCredentials {
 }
 
 export interface User {
-  id: string; // uuid
+  id: string;
   name: string;
   email: string;
   accessToken?: string;
-  created_at?: string; // timestamp
+  created_at?: string;
 }
 
 export interface AuthResponse {

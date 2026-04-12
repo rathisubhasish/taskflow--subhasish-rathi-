@@ -96,7 +96,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
               <input
                 type="text"
                 placeholder="Search tasks..."
-                className="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                className="w-full pl-11 pr-4 py-3 bg-inputBg border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />

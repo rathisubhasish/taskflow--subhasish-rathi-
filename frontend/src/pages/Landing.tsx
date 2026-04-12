@@ -1,10 +1,9 @@
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import type { RootState } from "../store";
 import { useEffect } from "react";
+import { useAppSelector } from "../store";
 
 const Landing = () => {
-  const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+  const { isAuthenticated } = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const Landing = () => {
   return (
     <div className="bg-white">
       <header className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-20">
           <div className="text-center">
             <div className="flex items-center">
               <h1 className=" text-center w-fit mx-auto px-4 py-2 rounded-lg border font-extrabold bg-gradient-to-r from-primary via-blue-500 to-red-400 bg-clip-text text-transparent cursive">
@@ -55,44 +54,19 @@ const Landing = () => {
         </div>
       </header>
 
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">Blazing Fast</h3>
-              <p className="text-slate-600">
-                Built with Vite and React for near-instant load times and zero
-                lag.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">
-                Task Hierarchy
-              </h3>
-              <p className="text-slate-600">
-                Organize your workflow into Projects and Tasks with clear
-                priority levels.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center font-bold text-xl">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-slate-900">
-                Secure by Design
-              </h3>
-              <p className="text-slate-600">
-                JWT-based authentication ensures your project data stays
-                private.
-              </p>
-            </div>
-          </div>
+      <section className="py-10 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-7xl flex flex-col justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-content-primary">Created By</p>
+          <h4>Subhasish Rathi</h4>
+          <Link
+            to="mailto:rathisubhasish@gmail.com"
+            className="text-primary underline"
+          >
+            rathisubhasish@gmail.com
+          </Link>
+          <Link to="tel:+918209170851" className="text-primary underline">
+            +91-8209170851
+          </Link>
         </div>
       </section>
 

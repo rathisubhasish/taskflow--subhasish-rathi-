@@ -1,14 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import type { ApiError, LoginCredentials } from "../../types";
 import { setAuth } from "../../store/authSlice";
-import type { RootState } from "../../store";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { loginUser } from "../../api/auth.api";
 import Button from "../../components/ui/Button";
 import Input from "../../components/ui/Input";
+import { useAppDispatch, useAppSelector } from "../../store";
 
 const Login = () => {
   const {
@@ -23,8 +22,8 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+  const dispatch = useAppDispatch();
+  const { isAuthenticated } = useAppSelector((state) => state.auth);
 
   useEffect(() => {
     if (isAuthenticated) {

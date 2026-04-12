@@ -16,7 +16,8 @@ export const useDashboardStats = () => {
       setStats(data);
       setError(null);
     } catch (err: any) {
-      const message = err.response?.data?.error || "Failed to load dashboard";
+      const message =
+        err.message || err.response?.data?.error || "Failed to load dashboard";
       setError(message);
       if (message) notify(message);
     } finally {

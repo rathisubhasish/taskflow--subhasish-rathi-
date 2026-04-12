@@ -5,8 +5,8 @@ import { useNotify } from "../../../hooks/useNotify";
 import Input from "../../../components/ui/Input";
 import Button from "../../../components/ui/Button";
 import { createProject } from "../api/projects.api";
-import { useDispatch } from "react-redux";
 import { addProject } from "../../../store/projectSlice";
+import { useAppDispatch } from "../../../store";
 
 interface CreateProjectModalProps {
   isOpen: boolean;
@@ -25,7 +25,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
   } = useForm({ mode: "onChange" });
 
   const [isLoading, setIsLoading] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { notify } = useNotify();
 
   if (!isOpen) return null;
@@ -46,11 +46,11 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
+      <div className="bg-cardBg w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
           <div className="flex items-center gap-2">
             <FiBriefcase className="text-indigo-600" />
-            <h2 className="text-xl font-bold text-slate-800">New Project</h2>
+            <h2 className="text-xl font-bold ">New Project</h2>
           </div>
           <Button
             onClick={onClose}
@@ -72,13 +72,13 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
           </div>
 
           <div className="space-y-2">
-            <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
+            <label className="flex items-center gap-2 text-xs font-bold text-content-primary uppercase">
               <FiAlignLeft /> Description
             </label>
             <textarea
               {...register("description")}
               rows={4}
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none resize-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder:text-slate-400"
+              className="w-full px-4 py-3 bg-inputBg border border-slate-200 rounded-xl outline-none resize-none focus:ring-2 focus:ring-indigo-500 transition-all placeholder:text-slate-400"
               placeholder="What is this project about? (Optional)"
             />
           </div>
@@ -87,7 +87,7 @@ const CreateProjectModal: React.FC<CreateProjectModalProps> = ({
               type="button"
               variant="ghost"
               onClick={onClose}
-              className="flex-1 py-3"
+              className="flex-1 py-3 text-content-primary"
             >
               Cancel
             </Button>

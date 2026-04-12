@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 const Input = forwardRef(
@@ -21,7 +21,7 @@ const Input = forwardRef(
         {label && (
           <label
             className={twMerge(
-              "text-sm font-medium text-slate-700",
+              "text-sm font-medium text-content-primary",
               labelClassName,
             )}
           >
@@ -34,7 +34,7 @@ const Input = forwardRef(
           ref={ref}
           type={type}
           className={twMerge(
-            "w-full px-4 py-2 border rounded-md outline-none transition-all",
+            "w-full px-4 py-2 border rounded-md outline-none transition-all bg-inputBg",
             "focus:ring-2",
             error
               ? "border-red-500 focus:ring-red-500"

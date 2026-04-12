@@ -6,10 +6,22 @@ import Landing from "./pages/Landing";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Toast from "./components/ui/Toast";
+import { useEffect } from "react";
+import { useAppSelector } from "./store";
 
 function App() {
+  const { theme } = useAppSelector((state) => state.ui);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
-    <>
+    <div className="bg-mainBg">
       <Toast />
       <BrowserRouter>
         <Routes>
@@ -35,7 +47,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

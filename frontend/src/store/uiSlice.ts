@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import type { ThemeMode } from "../types";
+import { getInitialTheme } from "../utils/utils";
 
 interface UIState {
+  theme: ThemeMode;
   toast: {
     message: string;
     type: "success" | "error" | "info";
@@ -10,6 +13,7 @@ interface UIState {
 }
 
 const initialState: UIState = {
+  theme: getInitialTheme(),
   toast: null,
 };
 
@@ -17,6 +21,19 @@ const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
+    toggleTheme: (state) => {
+      state.theme = state.theme === "light" ? "dark" : "light";
+      localStorage.setItem("taskflow_theme", state.theme);
+      document.documentElement.classList.toggle("dark", state.theme === "dark");
+    },
+    setTheme: (state, action: PayloadAction<ThemeMode>) => {
+      state.theme = action.payload;
+      localStorage.setItem("taskflow_theme", action.payload);
+      document.documentElement.classList.toggle(
+        "dark",
+        action.payload === "dark",
+      );
+    },
     showToast: (
       state,
       action: PayloadAction<{
@@ -34,5 +51,5 @@ const uiSlice = createSlice({
   },
 });
 
-export const { showToast, hideToast } = uiSlice.actions;
+export const { toggleTheme, setTheme, showToast, hideToast } = uiSlice.actions;
 export default uiSlice.reducer;

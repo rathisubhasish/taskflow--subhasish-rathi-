@@ -22,16 +22,16 @@ const BoardColumn: React.FC<BoardColumnProps> = ({
   onAssigneeUpdate,
 }) => {
   return (
-    <div className="w-full flex flex-col h-full min-h-[500px] bg-slate-50/50 rounded-3xl p-2 border border-slate-100">
+    <div className="w-full flex flex-col h-full min-h-[500px] bg-mainBg rounded-xl p-2">
       <div className="flex justify-between items-center p-3 mb-2">
         <div className="flex items-center gap-2 w-full">
           <div
             className={`w-4 h-4 rounded-full ${getTaskStatusColor(status)}`}
           />
-          <p className="text-slate-700 uppercase font-bold text-xs tracking-wider">
+          <p className=" uppercase font-bold text-xs tracking-wider">
             {status === "inprogress" ? "In Progress" : status}
           </p>
-          <p className="bg-slate-200 ml-auto text-slate-600 rounded px-3 py-1 font-bold flex justify-center items-center">
+          <p className="bg-cardBg ml-auto  rounded px-3 py-1 font-bold flex justify-center items-center">
             {tasks.length}
           </p>
         </div>
@@ -60,10 +60,8 @@ const BoardColumn: React.FC<BoardColumnProps> = ({
             {provided.placeholder}
 
             {tasks.length === 0 && !snapshot.isDraggingOver && (
-              <div className="h-32 flex items-center justify-center border-2 border-dashed border-slate-200 rounded-2xl">
-                <p className="text-[10px] font-bold text-slate-300 uppercase">
-                  No Tasks
-                </p>
+              <div className="h-32 flex items-center justify-center border-2 border-dashed border-cardBg rounded-2xl">
+                <p className="text-[10px] font-bold  uppercase">No Tasks</p>
               </div>
             )}
           </div>
@@ -73,4 +71,4 @@ const BoardColumn: React.FC<BoardColumnProps> = ({
   );
 };
 
-export default BoardColumn;
+export default React.memo(BoardColumn);

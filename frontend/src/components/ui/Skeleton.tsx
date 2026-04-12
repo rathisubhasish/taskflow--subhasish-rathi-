@@ -7,7 +7,7 @@ export const Skeleton = ({ className }: { className?: string }) => (
 );
 
 export const DashboardTileSkeleton = () => (
-  <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm w-full space-y-2 sm:w-[240px]">
+  <div className="bg-cardBg p-6 rounded-2xl border border-slate-200 shadow-sm w-full space-y-2 sm:w-[240px]">
     <Skeleton className="h-4 w-24" />
     <div className="flex items-center justify-between">
       <Skeleton className="h-8 w-16" />
@@ -18,7 +18,7 @@ export const DashboardTileSkeleton = () => (
 );
 
 export const ProjectCardSkeleton = () => (
-  <div className="bg-white p-6 rounded-2xl sm:max-w-[270px] sm:min-w-[270px] w-full border border-slate-200 shadow-sm space-y-4">
+  <div className="bg-cardBg p-6 rounded-2xl sm:max-w-[270px] sm:min-w-[270px] w-full border border-slate-200 shadow-sm space-y-4">
     <Skeleton className="w-11 h-11 rounded-xl" />
 
     <Skeleton className="h-6 w-3/4" />
@@ -36,7 +36,7 @@ export const ProjectCardSkeleton = () => (
 );
 
 export const TaskCardSkeleton = () => (
-  <div className="bg-white border border-slate-200 rounded-lg p-4 space-y-3 shadow-sm">
+  <div className="bg-cardBg border border-slate-200 rounded-lg p-4 space-y-3 shadow-sm">
     <div className="flex justify-between items-center">
       <Skeleton className="h-5 w-16 rounded" />
       <Skeleton className="h-5 w-5 rounded-full" />

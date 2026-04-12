@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { readDB, writeDB } = require("../middleware/dbHandler");
 const authenticate = require("../middleware/auth");
+const validation = require("../middleware/validation");
 
 router.get("/users", authenticate, (req, res) => {
   const db = readDB();
@@ -11,20 +12,9 @@ router.get("/users", authenticate, (req, res) => {
   res.json(userList);
 });
 
-router.post("/register", (req, res) => {
+router.post("/register", validation, (req, res) => {
   const { email, password, name } = req.body;
   const db = readDB();
-
-  if (!email || !password || !name) {
-    return res.status(400).json({
-      error: "validation failed",
-      fields: {
-        email: email ? null : "is required",
-        name: name ? null : "is required",
-        password: password ? null : "is required",
-      },
-    });
-  }
 
   if (db.users.find((u) => u.email === email)) {
     return res.status(409).json({ error: "User exists" });

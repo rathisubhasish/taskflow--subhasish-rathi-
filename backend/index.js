@@ -17,5 +17,5 @@ app.use("/tasks", taskRoutes);
 app.use("/dashboard", dashboardRoutes);
 
 app.listen(process.env.PORT, () =>
-  console.log(`🚀 Persistent Backend: http://localhost:${process.env.PORT}`),
+  console.log(`🚀 Backend: http://localhost:${process.env.PORT}`),
 );

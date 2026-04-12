@@ -1,6 +1,4 @@
 import { useEffect, useCallback, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "../../../store";
 import {
   fetchProjectsStart,
   fetchProjectsSuccess,
@@ -11,14 +9,13 @@ import {
   getProjects,
   deleteProject as deleteProjectApi,
 } from "../api/projects.api";
+import { useAppDispatch, useAppSelector } from "../../../store";
 
 export const useProjects = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const hasFetched = useRef(false);
 
-  const { items, loading, error } = useSelector(
-    (state: RootState) => state.projects,
-  );
+  const { items, loading, error } = useAppSelector((state) => state.projects);
 
   const loadProjects = useCallback(async () => {
     dispatch(fetchProjectsStart());
@@ -38,11 +35,12 @@ export const useProjects = () => {
         if (success) {
           dispatch(removeProject(id));
           return true;
+        } else {
+          // Throw if the API returned a custom failure flag
+          throw new Error("Server could not delete the project.");
         }
-        return false;
       } catch (err) {
-        console.error("Delete failed", err);
-        return false;
+        throw err;
       }
     },
     [dispatch],

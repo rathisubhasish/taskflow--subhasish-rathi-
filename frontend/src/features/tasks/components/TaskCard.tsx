@@ -13,8 +13,7 @@ import { useUsers } from "../../../hooks/useUsers";
 import { FaTrash } from "react-icons/fa";
 import UserPopover from "../../../components/UsersPopover";
 import { FaUserCircle } from "react-icons/fa";
-import type { RootState } from "../../../store";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../../../store";
 
 type TaskProps = {
   task: Task;
@@ -31,7 +30,7 @@ const TaskCard: React.FC<TaskProps> = ({
   statusUpdate,
   onAssigneeUpdate,
 }) => {
-  const currentUserId = useSelector((state: RootState) => state.auth.user?.id);
+  const currentUserId = useAppSelector((state) => state.auth.user?.id);
   const isOwner = currentUserId === task?.creator_id;
   const [open, setOpen] = useState(false);
   const [openUsers, setOpenUsers] = useState(false);
@@ -42,7 +41,7 @@ const TaskCard: React.FC<TaskProps> = ({
   const status = task?.status;
 
   const handleStatus = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent the card click from firing
+    e.stopPropagation();
     const target = e.target as HTMLElement;
     const currentStatus = target.getAttribute("data-status");
 
@@ -58,7 +57,7 @@ const TaskCard: React.FC<TaskProps> = ({
       className="min-h-32 rounded"
       bg={getTaskStatusColor(task.status)}
     >
-      <div className="w-full flex flex-col flex-grow bg-white ml-1 rounded-tl rounded-bl pr-1">
+      <div className="w-full flex flex-col flex-grow bg-cardBg ml-1 rounded-tl rounded-bl pr-1">
         <div className="w-full flex px-2 relative py-2 gap-4 items-center justify-between">
           <Chip text={task.priority} className="rounded" />
           <div
@@ -80,7 +79,7 @@ const TaskCard: React.FC<TaskProps> = ({
           <Popover
             open={open}
             onClose={() => setOpen(false)}
-            className="absolute w-40 bg-white border border-gray-200 rounded-xl shadow-lg z-[9999]"
+            className="absolute w-40 bg-hoverBg overflow-hidden border border-gray-200 rounded-xl shadow-lg z-[9999]"
             style={{
               position: "absolute",
               top: position.top,
@@ -92,7 +91,7 @@ const TaskCard: React.FC<TaskProps> = ({
                 onTaskClick?.(task);
                 setOpen(false);
               }}
-              className="w-full flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 transition"
+              className="w-full flex items-center gap-2 px-3 py-2 text-sm text-primary-content hover:bg-secondary transition"
             >
               ✏️ <span>Edit</span>
             </button>
@@ -105,7 +104,7 @@ const TaskCard: React.FC<TaskProps> = ({
               <p className="font-medium px-2 py-2">Change Status</p>
               {BOARD_STATUSES.map((item) => (
                 <p
-                  className={`w-full text-left uppercase cursor-pointer px-2 py-1 ${item === task.status ? "bg-primary/70 text-white" : " hover:bg-gray-100"}`}
+                  className={`w-full text-left uppercase cursor-pointer px-2 py-1 ${item === task.status ? "bg-primary/70 text-white" : " hover:bg-gray-500 hover:text-white"}`}
                   key={item}
                   data-status={item}
                 >

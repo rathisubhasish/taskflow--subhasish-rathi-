@@ -9,6 +9,7 @@ import { useCallback, useState } from "react";
 import { useUsers } from "../hooks/useUsers";
 import { useNotify } from "../hooks/useNotify";
 import ConfirmModal from "../components/ui/ConfirmModal";
+import { MdInfoOutline } from "react-icons/md";
 
 const Projects = () => {
   const { projects, loading, deleteProject } = useProjects();
@@ -36,10 +37,8 @@ const Projects = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold text-slate-900">Projects</h1>
-            <p className="text-slate-500 text-sm">
-              Manage and track all your active work.
-            </p>
+            <h1 className="text-2xl font-bold">Projects</h1>
+            <p className="">Manage and track all your active work.</p>
           </div>
           <Button
             variant="primary"
@@ -49,6 +48,22 @@ const Projects = () => {
             <FiPlus />
             <span className="hidden sm:flex">New Project</span>
           </Button>
+        </div>
+        <div className="bg-hoverBg w-full px-2 py-2 rounded-xl flex flex-col gap-1">
+          <p className="text-xs flex gap-1 items-center">
+            <MdInfoOutline />
+            Project will be visible here only if the user is the creator of the
+            project or has at least one task assigned to them within the
+            project.
+          </p>
+          <p className="text-xs flex gap-1 items-center">
+            <MdInfoOutline />
+            Only the project owner has permission to update the project.
+          </p>
+          <p className="text-xs flex gap-1 items-center">
+            <MdInfoOutline />
+            Only the project owner has permission to delete the project.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

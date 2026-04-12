@@ -51,9 +51,6 @@ const authSlice = createSlice({
       state.user = null;
       state.accessToken = null;
       state.isAuthenticated = false;
-
-      localStorage.removeItem("taskflow_token");
-      localStorage.removeItem("taskflow_user");
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
