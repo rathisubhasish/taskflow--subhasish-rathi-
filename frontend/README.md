@@ -1,73 +1,128 @@
-# React + TypeScript + Vite
+# TaskFlow — Professional Kanban Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TaskFlow is a high-performance, enterprise-grade project management application built with **React**, **TypeScript**, and **Redux Toolkit**. It features a smooth Kanban board experience with optimistic UI updates, persistent theme support, and a secure session management architecture.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Kanban Board Engine:** Full **Drag & Drop** task updates using `@hello-pangea/dnd` with specialized columns for `Todo`, `In-Progress`, and `Completed`.
+- **Collaborative Access:** Shared project access and task assignment functionality.
+- **Multi-Project Management**: Create and manage multiple projects. Projects are visible to you if you are the Owner or if you have at least one Task Assigned to you within that project.
+- **Granular Task Control**: Create, edit, and track unlimited tasks. While any user can update a task's status or details, deletion is restricted to the original task creator.
+- **Project Ownership**: Only the Project Owner has the specific permissions required to update or delete the project itself.
+- **Effortless Deletion**: Built-in capability to remove individual tasks or entire projects (including all nested data) with a single action to keep your workspace clean.
+- **Optimistic UI Updates:** Seamless task transitions and status updates that reflect immediately in the UI while syncing with the backend.
+- **Advanced Filtering:** Real-time task filtering by Search Query, Priority, Assignee, and Time (Today/Overdue).
+- **Theming System:** System-integrated **Dark Mode toggle** with semantic CSS variables and dynamic UI configurations.
+- **Responsive Architecture:** Fully **responsive on all devices** (Mobile, Tablet, Desktop), including a floating action button (FAB) for mobile task creation.
+- **Resilient Error Handling:** Global and component-level error handling for 404s, 500s, and network failures.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🏗 Architecture & Design Patterns
 
-## Expanding the ESLint configuration
+### 1. The "Nuclear" Logout Pattern
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+To ensure maximum security, we implemented a **Root Reducer Reset**. This pattern intercepts the `auth/logout` action to wipe the entire Redux state tree and clear `localStorage`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. Senior-Level Coding Standards
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Clean Code:** Strict adherence to naming conventions, modular structure, and **Separation of Concerns (SoC)**.
+- **No "God Functions":** Logic is broken down into small, reusable, and reviewable utility functions and custom hooks.
+- **Protected Routes:** Frontend guarding via an `AuthGuard` to prevent unauthorized access to private views.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Performance & Data
+
+- **Optimized Rendering:** Minimized re-renders using memoization and efficient state selectors.
+- **Mock DB:** Built-in Mock Database support for seamless development and testing.
+
+---
+
+## 📱 Core Modules & Views
+
+| Module              | Features & Functionality                                                                        |
+| :------------------ | :---------------------------------------------------------------------------------------------- |
+| **Auth System**     | Login / RegisterForm with client-side validation, error handling, and JWT storage.              |
+| **Projects List**   | Show all accessible projects with a dedicated button to create new projects.                    |
+| **Project Detail**  | Tasks listed or grouped by status; filterable by status and assignee.                           |
+| **Task Management** | Create/Edit via Modal or side panel — includes title, status, priority, assignee, and due date. |
+| **Navbar**          | Displays logged-in user's name, Dark mode toggle, and a secure logout button.                   |
+
+---
+
+## 🛠 Tech Stack
+
+| Category             | Technology                             |
+| :------------------- | :------------------------------------- |
+| **Framework**        | React 18 (Vite)                        |
+| **Language**         | TypeScript                             |
+| **State Management** | Redux Toolkit (RTK)                    |
+| **Styling**          | Tailwind CSS + Dynamic Config          |
+| **Drag & Drop**      | @hello-pangea/dnd                      |
+| **API Handling**     | Axios + Custom Hooks (Mock DB support) |
+
+---
+
+## 📂 Project Structure
+
+````text
+## 📂 Project Structure
+
+The project follows a **Feature-Based (Domain-Driven)** modular architecture to ensure high scalability and easy maintenance.
+
+```plaintext
+src/
+├── api/                # Global API instances and interceptors
+├── components/         # Shared UI (Button, Modal, Skeleton, DarkModeToggle)
+├── features/           # Domain-driven modules
+│   ├── auth/           # Authentication
+│   │   ├── components/ # Login/Register forms
+│   │   ├── hooks/      # useAuth specific logic
+│   │   ├── apis/       # Auth-specific endpoints
+│   │   └── types/      # Auth interfaces
+│   ├── projects/       # Dashboard and Project management
+│   │   ├── components/ # Project cards, Dashboard UI
+│   │   ├── hooks/      # useProjects logic
+│   │   ├── apis/       # Project-specific endpoints
+│   │   └── types/      # Project interfaces
+│   └── tasks/          # Kanban board, Task cards, and Filters
+│       ├── components/ # Kanban columns, Task cards
+│       ├── hooks/      # useTasks and Drag-and-Drop logic
+│       ├── apis/       # Task-specific endpoints
+│       └── types/      # Task interfaces
+├── hooks/              # Global utility hooks (useNotify, useUsers, useTheme)
+├── store/              # Redux logic (Slices & Root Reducer)
+├── types/              # Global TypeScript interfaces
+├── routes/             # App routing and route definitions
+└── utils/              # Helpers (Debounce, Formatters, Status Constants)
+
+
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/your-username/taskflow-frontend.git](https://github.com/your-username/taskflow-frontend.git)
+   cd taskflow-frontend
+````
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables**
+   Create a `.env` file in the root directory:
+
+   ```env
+   VITE_API_URL=http://localhost:5000/api
+   ```
+
+4. **Run in Development**
+   ```bash
+   npm run dev
+   ```
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
