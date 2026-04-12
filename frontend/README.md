@@ -18,7 +18,7 @@ TaskFlow is a high-performance, enterprise-grade project management application 
 - **Advanced Filtering:** Real-time task filtering by Search Query, Priority, Assignee, and Time (Today/Overdue).
 - **Theming System:** System-integrated **Dark Mode toggle** with semantic CSS variables and dynamic UI configurations.
 - **Responsive Architecture:** Fully **responsive on all devices** (Mobile, Tablet, Desktop), including a floating action button (FAB) for mobile task creation.
-- **Resilient Error Handling:** Global and component-level error handling for 404s, 500s, and network failures.
+- **Error Handling:** Global and component-level error handling for failures.
 
 ---
 
@@ -32,7 +32,7 @@ To ensure maximum security, we implemented a **Root Reducer Reset**. This patter
 
 - **Clean Code:** Strict adherence to naming conventions, modular structure, and **Separation of Concerns (SoC)**.
 - **No "God Functions":** Logic is broken down into small, reusable, and reviewable utility functions and custom hooks.
-- **Protected Routes:** Frontend guarding via an `AuthGuard` to prevent unauthorized access to private views.
+- **Protected Routes:** Frontend after login routes are protected to prevent unauthorized access to private views.
 
 ### 3. Performance & Data
 
