@@ -41,7 +41,7 @@ const UserPopover: React.FC<Props> = ({
     <Popover
       open={open}
       onClose={onClose}
-      className="absolute w-[20rem] bg-white border border-gray-200 rounded-xl shadow-lg z-[9999]"
+      className="absolute w-[20rem] bg-cardBg border border-gray-200 rounded-xl shadow-lg z-[9999]"
       style={{
         top: position.top,
         left: position.left,
@@ -53,7 +53,7 @@ const UserPopover: React.FC<Props> = ({
           placeholder="Search user..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full px-2 py-1 text-sm border rounded"
+          className="w-full px-2 py-1 text-sm border rounded bg-inputBg"
         />
 
         <div className="max-h-40 overflow-y-auto">
@@ -67,7 +67,7 @@ const UserPopover: React.FC<Props> = ({
           {filteredUsers?.map((user) => (
             <div
               key={user.id}
-              className="text-sm px-2 py-1 rounded hover:bg-gray-100 cursor-pointer"
+              className="text-sm px-2 py-1 rounded hover:bg-hoverBg cursor-pointer"
               onClick={() => {
                 onSelectUser?.(user.id);
                 onClose();

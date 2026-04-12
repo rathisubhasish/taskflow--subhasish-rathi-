@@ -1,18 +1,15 @@
-import { useSelector, useDispatch } from "react-redux";
 import { useCallback, useEffect } from "react";
-import type { RootState } from "../store";
 import { getAllUsers } from "../api/users.api";
 import {
   fetchUsersStart,
   fetchUsersSuccess,
   fetchUsersFailure,
 } from "../store/usersSlice";
+import { useAppDispatch, useAppSelector } from "../store";
 
 export const useUsers = () => {
-  const dispatch = useDispatch();
-  const { list, loading, error } = useSelector(
-    (state: RootState) => state.users,
-  );
+  const dispatch = useAppDispatch();
+  const { list, loading, error } = useAppSelector((state) => state.users);
 
   const loadUsers = useCallback(async () => {
     dispatch(fetchUsersStart());

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { FiPlus, FiFilter } from "react-icons/fi";
 import { DragDropContext, type DropResult } from "@hello-pangea/dnd";
-import { useSelector } from "react-redux";
+import { MdInfoOutline } from "react-icons/md";
 
 // Hooks
 import { useProjectDetails } from "../features/tasks/hooks/useProjectDetails";
@@ -21,7 +21,7 @@ import FilterSection from "../features/tasks/components/FilterSection";
 // Utils & Types
 import { BOARD_STATUSES, debounce } from "../utils/utils";
 import type { Task, TaskStatus } from "../features/tasks/types";
-import type { RootState } from "../store";
+import { useAppSelector } from "../store";
 import { updateProject } from "../features/projects/api/projects.api";
 import { BiLeftArrow } from "react-icons/bi";
 import ConfirmModal from "../components/ui/ConfirmModal";
@@ -32,7 +32,8 @@ const ProjectDetail: React.FC = () => {
 
   // Hook State
   const { loadUsers, users } = useUsers();
-  const { project, loading, refresh, setProject } = useProjectDetails(id);
+  const { project, loading, refresh, setProject, error } =
+    useProjectDetails(id);
 
   const {
     handleCreate,
@@ -53,7 +54,7 @@ const ProjectDetail: React.FC = () => {
   const [selectedAssignees, setSelectedAssignees] = useState<string[]>([]);
   const [timeFilter, setTimeFilter] = useState<string>("all");
 
-  const { user: currentUser } = useSelector((state: RootState) => state.auth);
+  const { user: currentUser } = useAppSelector((state) => state.auth);
 
   const canEditProject = useMemo(() => {
     if (!project || !currentUser) return false;
@@ -67,21 +68,17 @@ const ProjectDetail: React.FC = () => {
     const today = new Date().setHours(0, 0, 0, 0);
 
     return project.tasks.filter((task) => {
-      // Search check
       const matchesSearch =
         task.title.toLowerCase().includes(query) ||
         task.description?.toLowerCase().includes(query);
 
-      // Priority check
       const matchesPriority =
         priorityFilter === "all" || task.priority === priorityFilter;
 
-      // Multi-Assignee check
       const matchesAssignee =
         selectedAssignees.length === 0 ||
         selectedAssignees.includes(task.assignee_id || "");
 
-      // Time check
       let matchesTime = true;
       if (timeFilter !== "all") {
         const taskDate = task.due_date
@@ -283,13 +280,39 @@ const ProjectDetail: React.FC = () => {
     loadUsers();
   }, [loadUsers]);
 
-  if (!loading && !project)
+  if (!loading && !project && !error)
     return (
-      <div className="p-20 text-center">
-        <h2 className="text-xl font-bold text-slate-800">Project Not Found</h2>
-        <Button href="/projects" variant="ghost" className="mt-4">
-          Back to Projects
-        </Button>
+      <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
+        <div className="p-4 rounded-full bg-errorBg text-error">
+          <svg
+            className="w-12 h-12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+        </div>
+        <h2 className="text-2xl font-bold text-content-primary">
+          Oops! Something went wrong
+        </h2>
+        <p className="text-content-secondary max-w-md text-center">
+          {error ||
+            "We couldn't load the project details. Please try again later."}
+        </p>
+        <div className="flex gap-3">
+          <Button variant="primary" onClick={refresh}>
+            Try Again
+          </Button>
+          <Button href="/projects" variant="ghost">
+            Back to Projects
+          </Button>
+        </div>
       </div>
     );
 
@@ -300,7 +323,7 @@ const ProjectDetail: React.FC = () => {
           <Button
             href="/projects"
             variant="ghost"
-            className="px-0 text-slate-400 hover:bg-white"
+            className="px-0 text-primary hover:bg-white"
           >
             <BiLeftArrow />
             Projects /
@@ -309,11 +332,11 @@ const ProjectDetail: React.FC = () => {
             <Button
               variant="ghost"
               onClick={() => setIsFilterOpen(!isFilterOpen)}
-              className="relative gap-1"
+              className="relative gap-1 hover:bg-cardBg text-content-primary"
             >
               <FiFilter /> Filters{" "}
               {activeFilterCount > 0 && (
-                <span className="ml-1 text-indigo-600">
+                <span className="ml-1 text-content-primary">
                   ({activeFilterCount})
                 </span>
               )}
@@ -359,6 +382,18 @@ const ProjectDetail: React.FC = () => {
           </div>
         )}
       </header>
+
+      <div className="bg-hoverBg w-full px-2 py-2 rounded-xl flex flex-col gap-1">
+        <p className="text-xs flex gap-1 items-center">
+          <MdInfoOutline />
+          Only the creator of the task has permission to delete the task.
+        </p>
+        {/* <hr /> */}
+        <p className="text-xs flex gap-1 items-center">
+          <MdInfoOutline />
+          Any user can update the task.
+        </p>
+      </div>
 
       <FilterSection
         isOpen={isFilterOpen}

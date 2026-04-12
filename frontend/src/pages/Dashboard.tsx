@@ -1,13 +1,12 @@
-import { useSelector } from "react-redux";
-import type { RootState } from "../store";
+import { useAppSelector } from "../store";
 import Button from "../components/ui/Button";
-import DashboardTile from "../components/ui/DashboardTile";
 import { DashboardTileSkeleton } from "../components/ui/Skeleton";
 import { useDashboardStats } from "../features/dashboard/hooks/useDashboardStats";
 import { FiCheckCircle, FiClock, FiFolder, FiUsers } from "react-icons/fi";
+import DashboardTile from "../features/dashboard/components/DashboardTile";
 
 const Dashboard = () => {
-  const { user } = useSelector((state: RootState) => state.auth);
+  const { user } = useAppSelector((state) => state.auth);
   const { stats, loading, error } = useDashboardStats();
 
   const tileConfig = [
@@ -56,19 +55,21 @@ const Dashboard = () => {
     <div className="space-y-8">
       <div className="w-full flex flex-col sm:flex-row gap-4">
         <div className="w-full flex flex-col flex-grow rounded-lg">
-          <div className="bg-white w-full px-4 sm:p-0 p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col flex-grow justify-center items-center text-center">
-            <h1 className="text-3xl font-bold text-slate-900">
-              Welcome, <span className="text-indigo-600">{user?.name}</span> 👋
+          <div className="bg-cardBg w-full px-4 sm:p-0 p-4 rounded-2xl border shadow flex flex-col flex-grow justify-center items-center text-center">
+            <h1 className="text-3xl font-bold">
+              Welcome, <span className="text-secondary">{user?.name}</span> 👋
             </h1>
-            <p className="text-slate-500 mt-2">
-              Here is what's happening with your projects today.
+            <p className=" mt-2">
+              Here is what's happening with overall company projects.
             </p>
           </div>
         </div>
 
         <div className="w-full flex flex-col flex-grow rounded-lg">
-          <div className="bg-indigo-600 px-6 py-6 rounded-2xl text-white shadow-lg shadow-indigo-100 w-full">
-            <h3 className="text-xl font-bold mb-2">Manage Projects</h3>
+          <div className="bg-primary px-6 py-6 rounded-2xl text-white shadow w-full">
+            <h3 className="text-xl font-bold mb-2 text-white">
+              Manage Projects
+            </h3>
             <p className="text-indigo-100 mb-6 text-sm">
               View ongoing projects, track progress, and manage tasks.
             </p>

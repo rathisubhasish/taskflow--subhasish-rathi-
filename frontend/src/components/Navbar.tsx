@@ -4,12 +4,14 @@ import { RxCross2 } from "react-icons/rx";
 import { HiOutlineMenu } from "react-icons/hi";
 import Button from "./ui/Button";
 import { privateRoutes } from "../routes/config";
-import { useDispatch } from "react-redux";
 import { logout } from "../store/authSlice";
+import ThemeToggle from "./ui/ThemeToggle";
+import { useAppDispatch } from "../store";
+import { setTheme } from "../store/uiSlice";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const menuItems = privateRoutes.filter((route) => route.label);
@@ -17,34 +19,41 @@ const Navbar = () => {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `block p-2 rounded-md text-base text-center font-medium transition ${
       isActive
-        ? "bg-indigo-50 text-indigo-600"
-        : "text-slate-600 hover:bg-slate-100"
+        ? "bg-hoverBg text-content-primary"
+        : "text-content-secondary hover:bg-hoverBg"
     }`;
 
   const handleLogout = () => {
-    dispatch(logout()); // Clears Redux state and LocalStorage
-    setOpen(false); // Closes mobile menu if open
-    navigate("/login"); // Redirects user
+    dispatch(logout());
+    dispatch(setTheme("light"));
+    setOpen(false);
+    navigate("/login");
   };
 
   return (
     <>
-      <div className="md:hidden flex items-center justify-between bg-white p-4 rounded-2xl mb-4">
+      <div className="md:hidden flex items-center justify-between bg-cardBg p-4 rounded-2xl mb-4">
         <Link to="/" className="flex items-center">
           <h3 className="text-xl font-extrabold bg-gradient-to-r from-primary via-blue-500 to-red-400 bg-clip-text text-transparent cursive">
             TaskFlow
           </h3>
         </Link>
 
-        <Button variant="ghost" onClick={() => setOpen(true)}>
-          <HiOutlineMenu size={25} />
-        </Button>
+        <div className="ml-auto">
+          <ThemeToggle />
+          <Button variant="ghost" onClick={() => setOpen(true)}>
+            <HiOutlineMenu size={25} />
+          </Button>
+        </div>
       </div>
 
-      <aside className="hidden md:flex md:flex-col md:h-[96vh] md:sticky md:top-4 border-r bg-white rounded-2xl p-4">
-        <h3 className="text-xl pb-3 font-extrabold bg-gradient-to-r from-primary via-blue-300 to-red-800 text-center bg-clip-text text-transparent cursive">
-          TaskFlow
-        </h3>
+      <aside className="hidden md:flex md:flex-col md:h-[96vh] md:sticky md:top-4 bg-cardBg rounded-2xl p-4">
+        <div className="w-full flex pb-3 gap-4 items-center justify-between">
+          <h3 className="text-xl font-extrabold bg-gradient-to-r from-primary via-blue-300 to-red-800 text-center bg-clip-text text-transparent cursive">
+            TaskFlow
+          </h3>
+          <ThemeToggle />
+        </div>
 
         <hr className="opacity-20" />
 
@@ -66,14 +75,14 @@ const Navbar = () => {
       </aside>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-white px-4 py-4 md:hidden flex flex-col h-full">
+        <div className="fixed inset-0 z-50 bg-cardBg px-4 py-4 md:hidden flex flex-col h-full">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-extrabold bg-gradient-to-r cursive from-primary via-blue-500 to-red-400 bg-clip-text text-transparent">
               TaskFlow
             </h3>
 
             <Button variant="ghost" onClick={() => setOpen(false)}>
-              <RxCross2 size={25} />
+              <RxCross2 size={25} className="text-content-primary" />
             </Button>
           </div>
 
@@ -92,7 +101,7 @@ const Navbar = () => {
 
           <Button
             variant="ghost"
-            className="w-full text-red-800 border-2 border-red-800 mt-auto py-2 rounded-lg"
+            className="w-full text-error border-2 bg-errorBg mt-auto py-2 rounded-lg"
             onClick={handleLogout}
           >
             Logout

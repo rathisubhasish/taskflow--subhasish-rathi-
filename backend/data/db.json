@@ -1,184 +1,245 @@
 {
   "users": [
     {
-      "id": "u1775854741426",
+      "id": "u1775982923366",
+      "name": "TestUser",
+      "email": "test@example.com",
+      "password": "$2b$10$bAULDA59mzy3PEOLqTamz.AX.9qDDwQiiaTmZoYZMmYSWIRjxJpM2",
+      "created_at": "2026-04-12T08:35:23.537Z"
+    },
+    {
+      "id": "u1775983034988",
       "name": "Subhasish Rathi",
-      "email": "rathi@taskflow.com",
-      "password": "$2b$10$bZDaz2Gyrh0/KsETe7XrJuJhHSAUeeJpuXuPR.HycTAvkDz7rVg0G",
-      "created_at": "2026-04-10T20:59:01.538Z"
+      "email": "subhasish.rathi@taskflow.com",
+      "password": "$2b$10$iMWyaMiw5RVxF0SaVv5cBu8wz5EpcWgXSQRXhmfSpjmLvABuvIaJW",
+      "created_at": "2026-04-12T08:37:15.156Z"
     },
     {
-      "id": "u1775854823491",
-      "name": "Ankit Kumar",
-      "email": "ankit@taskflow.com",
-      "password": "$2b$10$fCvL1R9HSc3fvljYlVMKveTv9AAHfMZ6PRThWuPSBMyXxFR5CufIS",
-      "created_at": "2026-04-10T21:00:23.572Z"
+      "id": "u1775983045908",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@dice.com",
+      "password": "$2b$10$8mTN5hTXVXjo6Qd.2Ug3UeZ84odbYyiMvt.rk663LLewgVb/74fRq",
+      "created_at": "2026-04-12T08:37:26.095Z"
     },
     {
-      "id": "u1775857792916",
-      "name": "Ankit Kumar2",
-      "email": "ankit@taskflow2.com",
-      "password": "$2b$10$hqw1aUeV9wRhRlRfEqn3vu3taPFJHIdRuzdVkjrL6IjvVdHdh1DY.",
-      "created_at": "2026-04-10T21:49:53.115Z"
+      "id": "u1775983055726",
+      "name": "Ananya Iyer",
+      "email": "ananya.i@cleartrip.com",
+      "password": "$2b$10$CLC9xXrRgb.DGdXry6Uey.39MrOH34//7VxD6RzVq/cTp8CNPytZu",
+      "created_at": "2026-04-12T08:37:35.917Z"
     },
     {
-      "id": "u1775861159961",
-      "name": "Ankit yadav",
-      "email": "ankityadav@taskflow.com",
-      "password": "$2b$10$WFEO9Wr3n/YMucWTBBTcO.S9Uef47rg8szjeF0744wAy38XqJ6ZrO",
-      "created_at": "2026-04-10T22:46:00.054Z"
+      "id": "u1775983065972",
+      "name": "Vikram Malhotra",
+      "email": "v.malhotra@techcorp.io",
+      "password": "$2b$10$RfOqQMIBhl/99qPoR/2Z5u.KsL0uPL85ksC6IWpLDKMbDg7ljLGzi",
+      "created_at": "2026-04-12T08:37:46.134Z"
     },
     {
-      "id": "u1775861287230",
-      "name": "Ankit pro",
-      "email": "ankitpro@taskflow.com",
-      "password": "$2b$10$8oB8A0nITsP.rRfAPZjmh.m94H1IZMB9W7egasXltYqKUJ48aEYW6",
-      "created_at": "2026-04-10T22:48:07.338Z"
+      "id": "u1775983074880",
+      "name": "Sanya Gupta",
+      "email": "sanya.gupta@uber.com",
+      "password": "$2b$10$WCtWplOP7/PweZ.i9pxeL.G6Ec9fiWrV4LPdTRyfs69EoMxjpatPW",
+      "created_at": "2026-04-12T08:37:55.059Z"
     },
     {
-      "id": "u1775896710127",
-      "name": "asdasd",
-      "email": "sadasd@gmail.com",
-      "password": "$2b$10$6FZfdyX5OZKOOPniO1YjiOgzU0XtzkVJrspKeiTCnwh04PHaQ6/ne",
-      "created_at": "2026-04-11T08:38:30.319Z"
+      "id": "u1775983085670",
+      "name": "Ishaan Verma",
+      "email": "i.verma@devcommunity.org",
+      "password": "$2b$10$iy7pyW9eWhrw4LVOWnRXLeAqMtwDYDURwBBiNy5H2qX7EfOlVg1RS",
+      "created_at": "2026-04-12T08:38:05.834Z"
     },
     {
-      "id": "u1775896751106",
-      "name": "asdasd@gmail.com",
-      "email": "asdasd@gmail.com",
-      "password": "$2b$10$XEMhPbf1ec6.lsSLW2Jwa.5SNBXxZlJJwa/DT9JMHb7XiIDMmcrvm",
-      "created_at": "2026-04-11T08:39:11.215Z"
-    },
-    {
-      "id": "u1775897023135",
-      "name": "sads@gmail.com",
-      "email": "sdasdd@gmail.com",
-      "password": "$2b$10$pyaZnw1GWascvMWTV3fka.31RPNM/8B/w9b/nTitUmKD0a/0ty.I2",
-      "created_at": "2026-04-11T08:43:43.310Z"
+      "id": "u1775983095851",
+      "name": "Riya Kapoor",
+      "email": "riya.k@startup.in",
+      "password": "$2b$10$8ktXCHV9XnREyisAxZG30.MQeuyVzOTMy9TRwT.ROsQGnDJNrPSOK",
+      "created_at": "2026-04-12T08:38:16.031Z"
     }
   ],
   "projects": [
     {
-      "id": "p1775854926256",
-      "name": "Taskflow",
-      "description": "full stack engineer",
-      "owner_id": "u1775854741426",
-      "created_at": "2026-04-10T21:02:06.256Z",
-      "updated_at": "2026-04-11T17:47:49.070Z"
+      "id": "p1775985922125",
+      "name": "NovaNest",
+      "description": "Project",
+      "owner_id": "u1775983034988",
+      "created_at": "2026-04-12T09:25:22.125Z",
+      "updated_at": "2026-04-12T10:12:27.327Z"
     },
     {
-      "id": "p1775854966110",
-      "name": "E-Commerce Frontasd",
-      "description": "Next.js and Tailwind project",
-      "owner_id": "u1775854823491",
-      "created_at": "2026-04-10T21:02:46.110Z",
-      "updated_at": "2026-04-11T18:52:51.516Z"
+      "id": "p1775986027395",
+      "name": "MindMosaic",
+      "description": "our project",
+      "owner_id": "u1775982923366",
+      "created_at": "2026-04-12T09:27:07.395Z"
+    },
+    {
+      "id": "p1775986081649",
+      "name": "EcoSphere",
+      "description": "",
+      "owner_id": "u1775983055726",
+      "created_at": "2026-04-12T09:28:01.649Z"
+    },
+    {
+      "id": "p1775986310045",
+      "name": "CodePulse",
+      "description": "",
+      "owner_id": "u1775983065972",
+      "created_at": "2026-04-12T09:31:50.045Z"
+    },
+    {
+      "id": "p1775986734049",
+      "name": "ZenithFlow",
+      "description": "",
+      "owner_id": "u1775983074880",
+      "created_at": "2026-04-12T09:38:54.049Z"
+    },
+    {
+      "id": "p1775986771480",
+      "name": "OrbitEdge",
+      "description": "",
+      "owner_id": "u1775983085670",
+      "created_at": "2026-04-12T09:39:31.480Z"
+    },
+    {
+      "id": "p1775986801143",
+      "name": "BrightForge",
+      "description": "",
+      "owner_id": "u1775983095851",
+      "created_at": "2026-04-12T09:40:01.143Z"
+    },
+    {
+      "id": "p1775988406809",
+      "name": "UI/UX",
+      "description": "",
+      "owner_id": "u1775983034988",
+      "created_at": "2026-04-12T10:06:46.809Z"
+    },
+    {
+      "id": "p1775988496056",
+      "name": "Maintenance",
+      "description": "",
+      "owner_id": "u1775983045908",
+      "created_at": "2026-04-12T10:08:16.056Z"
     }
   ],
   "tasks": [
     {
-      "id": "t1775857228102",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "Implement User Auth44",
-      "description": "Using JWT and local storagea",
-      "status": "inprogress",
+      "id": "t1775987001358",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Requirement Gathering",
+      "description": "Collect project needs and expectations",
+      "status": "todo",
       "priority": "high",
-      "assignee_id": "u1775854741426",
-      "due_date": "2026-04-23",
-      "created_at": "2026-04-10T21:40:28.102Z",
-      "updated_at": "2026-04-11T18:09:03.820Z"
+      "assignee_id": "u1775983034988",
+      "due_date": "2026-05-01",
+      "created_at": "2026-04-12T09:43:21.358Z",
+      "updated_at": "2026-04-12T09:47:21.488Z"
     },
     {
-      "id": "t1775892201053",
-      "project_id": "p1775854966110",
-      "creator_id": "u1775854823491",
-      "title": "testing",
-      "description": "",
-      "status": "todo",
-      "priority": "medium",
-      "assignee_id": "u1775854741426",
-      "due_date": "2026-04-11",
-      "created_at": "2026-04-11T07:23:21.053Z",
-      "updated_at": "2026-04-11T14:37:18.858Z"
-    },
-    {
-      "id": "t1775902543580",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "sdfsdfsf",
-      "description": "",
-      "status": "completed",
-      "priority": "medium",
-      "assignee_id": "u1775854741426",
-      "due_date": "2026-04-11",
-      "created_at": "2026-04-11T10:15:43.580Z",
-      "updated_at": "2026-04-11T10:25:27.359Z"
-    },
-    {
-      "id": "t1775903146070",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "asdasddsasdf",
-      "description": "asdasdasdsf",
-      "status": "completed",
-      "priority": "low",
-      "assignee_id": "u1775854741426",
-      "due_date": "2026-04-13",
-      "created_at": "2026-04-11T10:25:46.070Z",
-      "updated_at": "2026-04-11T14:33:00.161Z"
-    },
-    {
-      "id": "t1775903392676",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "Checki sd uyh",
-      "description": "sdfsfd",
-      "status": "completed",
-      "priority": "medium",
-      "assignee_id": "u1775854823491",
-      "due_date": "2026-04-06",
-      "created_at": "2026-04-11T10:29:52.676Z",
-      "updated_at": "2026-04-11T17:49:43.238Z"
-    },
-    {
-      "id": "t1775918127916",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "pppsd",
-      "description": "fdasdasd",
+      "id": "t1775987018940",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Market Research",
+      "description": "Analyze competitors and trends",
       "status": "inprogress",
       "priority": "medium",
-      "assignee_id": "u1775896710127",
-      "due_date": "2026-04-14",
-      "created_at": "2026-04-11T14:35:27.916Z",
-      "updated_at": "2026-04-11T21:10:52.709Z"
-    },
-    {
-      "id": "t1775929599468",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "fsfsd",
-      "description": "sdfsd",
-      "status": "todo",
-      "priority": "medium",
-      "assignee_id": null,
-      "due_date": "2026-04-24",
-      "created_at": "2026-04-11T17:46:39.468Z",
-      "updated_at": "2026-04-11T17:49:11.281Z"
-    },
-    {
-      "id": "t1775929718809",
-      "project_id": "p1775854926256",
-      "creator_id": "u1775854741426",
-      "title": "asd",
-      "description": "asdads",
-      "status": "todo",
-      "priority": "medium",
-      "assignee_id": "u1775854823491",
+      "assignee_id": "u1775982923366",
       "due_date": "2026-04-15",
-      "created_at": "2026-04-11T17:48:38.809Z",
-      "updated_at": "2026-04-11T19:32:59.467Z"
+      "created_at": "2026-04-12T09:43:38.940Z",
+      "updated_at": "2026-04-12T09:44:18.882Z"
+    },
+    {
+      "id": "t1775987036750",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Idea Brainstorming",
+      "description": "Generate creative project ideas",
+      "status": "inprogress",
+      "priority": "medium",
+      "assignee_id": "u1775983065972",
+      "due_date": "2026-04-15",
+      "created_at": "2026-04-12T09:43:56.750Z",
+      "updated_at": "2026-04-12T09:47:32.363Z"
+    },
+    {
+      "id": "t1775987081095",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Project Planning",
+      "description": "Outline timeline and resources",
+      "status": "completed",
+      "priority": "medium",
+      "assignee_id": "u1775983045908",
+      "due_date": "2026-04-16",
+      "created_at": "2026-04-12T09:44:41.095Z",
+      "updated_at": "2026-04-12T09:44:53.997Z"
+    },
+    {
+      "id": "t1775987110328",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Feasibility Study",
+      "description": "Check if the idea is practical",
+      "status": "todo",
+      "priority": "low",
+      "assignee_id": "u1775983055726",
+      "due_date": "2026-04-22",
+      "created_at": "2026-04-12T09:45:10.328Z",
+      "updated_at": "2026-04-12T09:47:34.336Z"
+    },
+    {
+      "id": "t1775987151919",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Budget Estimation",
+      "description": "Calculate expected costs",
+      "status": "completed",
+      "priority": "medium",
+      "assignee_id": "u1775983074880",
+      "due_date": "2026-04-24",
+      "created_at": "2026-04-12T09:45:51.919Z",
+      "updated_at": "2026-04-12T09:46:19.119Z"
+    },
+    {
+      "id": "t1775987170601",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Team Formation",
+      "description": "Assign roles and responsibilities",
+      "status": "inprogress",
+      "priority": "medium",
+      "assignee_id": "u1775983085670",
+      "due_date": "2026-05-01",
+      "created_at": "2026-04-12T09:46:10.601Z",
+      "updated_at": "2026-04-12T10:11:37.888Z"
+    },
+    {
+      "id": "t1775987199381",
+      "project_id": "p1775985922125",
+      "creator_id": "u1775983034988",
+      "title": "Wireframing",
+      "description": "Create basic layout designs",
+      "status": "todo",
+      "priority": "medium",
+      "assignee_id": "u1775983095851",
+      "due_date": "2026-04-16",
+      "created_at": "2026-04-12T09:46:39.382Z",
+      "updated_at": "2026-04-12T09:46:53.500Z"
+    },
+    {
+      "id": "t1775988530529",
+      "project_id": "p1775988496056",
+      "creator_id": "u1775983045908",
+      "title": "Version Control",
+      "description": "Version Control architecture design and analysis",
+      "status": "todo",
+      "priority": "medium",
+      "assignee_id": "u1775983034988",
+      "due_date": "2026-05-01",
+      "created_at": "2026-04-12T10:08:50.529Z",
+      "updated_at": "2026-04-12T10:08:52.755Z"
     }
   ]
 }

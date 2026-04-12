@@ -56,12 +56,12 @@ export default function TitleEditInput({
             if (e.key === "Enter") setIsEditing(false);
             if (e.key === "Escape") cancel();
           }}
-          className={`text-2xl font-semibold w-full text-slate-900 tracking-tight border-b border-indigo-500 outline-none ${className}`}
+          className={`text-2xl font-semibold w-full text-content-secondary tracking-tight bg-inputBg border-b border-indigo-500 outline-none ${className}`}
         />
       ) : (
         <h1
           onClick={handleStartEditing}
-          className={`text-2xl font-semibold text-slate-800 tracking-tight ${
+          className={`text-2xl font-semibold text-content-primary tracking-tight ${
             canEdit
               ? "cursor-pointer hover:text-indigo-600 transition-colors"
               : "cursor-default"

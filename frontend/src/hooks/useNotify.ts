@@ -1,9 +1,9 @@
-import { useDispatch } from "react-redux";
 import { showToast, hideToast } from "../store/uiSlice";
 import { useRef } from "react";
+import { useAppDispatch } from "../store";
 
 export const useNotify = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const notify = (

@@ -68,14 +68,14 @@ const TaskFormModal: React.FC<Props> = ({
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4">
-      <div className="bg-white w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
+      <div className="bg-cardBg w-full max-w-lg rounded-2xl shadow-2xl animate-in zoom-in duration-200 overflow-hidden">
         <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-          <h2 className="text-xl font-bold text-slate-800">
+          <h2 className="text-xl font-bold ">
             {isEditMode ? "Edit Task" : "New Task"}
           </h2>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-200 rounded-full text-slate-400 transition-colors"
+            className="p-2 hover:bg-slate-200 rounded-full text-content-primary transition-colors"
           >
             <FiX size={20} />
           </button>
@@ -93,11 +93,11 @@ const TaskFormModal: React.FC<Props> = ({
           />
 
           <div className="space-y-2">
-            <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
+            <label className="flex items-center gap-2 text-xs font-bold  uppercase">
               <FiAlignLeft /> Description *
             </label>
             <textarea
-              className={`w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl h-24 outline-none resize-none focus:ring-2 focus:ring-indigo-500 transition-all ${
+              className={`w-full px-4 py-3 bg-inputBg border border-slate-200 rounded-xl h-24 outline-none resize-none focus:ring-2 focus:ring-indigo-500 transition-all ${
                 formData.description?.trim() === "" ? "border-amber-200" : ""
               }`}
               placeholder="Add some details..."
@@ -110,11 +110,11 @@ const TaskFormModal: React.FC<Props> = ({
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase">
+              <label className="flex items-center gap-2 text-xs font-bold text-content-primary uppercase">
                 <FiFlag /> Priority *
               </label>
               <select
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all appearance-none cursor-pointer"
+                className="w-full px-4 py-3 bg-inputBg border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 transition-all appearance-none cursor-pointer"
                 value={formData.priority || "medium"}
                 onChange={(e) =>
                   setFormData({ ...formData, priority: e.target.value as any })
@@ -142,7 +142,7 @@ const TaskFormModal: React.FC<Props> = ({
               type="button"
               variant="ghost"
               onClick={onClose}
-              className="flex-1 py-3"
+              className="flex-1 py-3 text-content-primary"
             >
               Cancel
             </Button>
@@ -150,7 +150,7 @@ const TaskFormModal: React.FC<Props> = ({
               type="submit"
               variant="primary"
               loading={loading}
-              disabled={!isFormValid || loading} // --- BUTTON DISABLE LOGIC ---
+              disabled={!isFormValid || loading}
               className={`flex-1 py-3 ${
                 !isFormValid ? "opacity-50 cursor-not-allowed bg-slate-300" : ""
               }`}

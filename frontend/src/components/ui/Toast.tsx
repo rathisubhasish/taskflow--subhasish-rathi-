@@ -1,11 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import { hideToast } from "../../store/uiSlice";
 import { FiX, FiCheckCircle, FiAlertCircle, FiInfo } from "react-icons/fi";
 
 const Toast = () => {
-  const dispatch = useDispatch();
-  const toast = useSelector((state: RootState) => state.ui.toast);
+  const dispatch = useAppDispatch();
+  const toast = useAppSelector((state) => state.ui.toast);
 
   if (!toast || !toast.isVisible) return null;
 

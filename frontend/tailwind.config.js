@@ -5,54 +5,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        /* 🔷 BRAND */
         primary: "#4F46E5",
-        primaryHover: "#4338CA",
-        primaryActive: "#3730A3",
-
         secondary: "#06B6D4",
-        secondaryHover: "#0891B2",
-        secondaryActive: "#0E7490",
 
-        bg: {
-          light: "#E0E7FF",
-          card: "#FFFFFF",
-          hover: "#F1F5F9",
+        success: "var(--color-success)",
+        warning: "var(--color-warning)",
+        error: "var(--color-danger)",
+        errorBg: "var(--color-danger-bg)",
 
-          dark: "#0F172A",
-          darkCard: "#1E293B",
-          darkHover: "#334155",
+        mainBg: "var(--color-bg-main)",
+        cardBg: "var(--color-bg-card)",
+        hoverBg: "var(--color-bg-hover)",
+        sidebarBg: "var(--color-bg-sidebar)",
+        accentBg: "var(--color-bg-accent)",
+        inputBg: "var(--color-bg-input)",
+
+        content: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          muted: "var(--color-text-muted)",
+          placeholder: "var(--color-text-placeholder)",
         },
 
-        border: {
-          light: "#E5E7EB",
-          subtle: "#F1F5F9",
-          active: "#6366F1",
-
-          dark: "#334155",
-          darkSubtle: "#1E293B",
-          darkActive: "#818CF8",
+        line: {
+          main: "var(--color-border-main)",
+          subtle: "var(--color-border-subtle)",
         },
 
-        text: {
-          primary: "#0F172A",
-          secondary: "#64748B",
-          muted: "#94A3B8",
-
-          darkPrimary: "#F1F5F9",
-          darkSecondary: "#CBD5F5",
-          darkMuted: "#64748B",
-        },
-
-        /* 🔘 BUTTONS (optional semantic alias) */
-        button: {
-          primary: "#4F46E5",
-          primaryHover: "#4338CA",
-          primaryActive: "#3730A3",
-
-          secondary: "#06B6D4",
-          secondaryHover: "#0891B2",
-          secondaryActive: "#0E7490",
+        status: {
+          todoText: "var(--color-todo-text)",
+          todoBg: "var(--color-todo-bg)",
+          progressText: "var(--color-progress-text)",
+          progressBg: "var(--color-progress-bg)",
+          doneText: "var(--color-done-text)",
+          doneBg: "var(--color-done-bg)",
         },
       },
 
@@ -66,20 +52,6 @@ export default {
       animation: {
         "bounce-in":
           "bounce-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
-      },
-
-      boxShadow: {
-        card: "0 1px 3px rgba(0,0,0,0.08)",
-        soft: "0 4px 12px rgba(0,0,0,0.05)",
-      },
-
-      borderRadius: {
-        xl: "12px",
-        "2xl": "16px",
-      },
-
-      transitionTimingFunction: {
-        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
     },
   },

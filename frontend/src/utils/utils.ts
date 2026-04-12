@@ -1,21 +1,31 @@
 import type { TaskStatus } from "../features/tasks/types";
+import type { ThemeMode } from "../types";
 
-export const getTaskStatusColor = (status = "") => {
-  const normalized = String(status).toLowerCase().replace(/[_-]/g, " ").trim();
+export const getInitialTheme = (): ThemeMode => {
+  if (typeof window === "undefined") return "light";
+  const saved = localStorage.getItem("taskflow_theme") as ThemeMode | null;
+  if (saved) return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+export const getTaskStatusColor = (status: string = ""): string => {
+  const normalized = String(status).toLowerCase().replace(/[_-]/g, "").trim();
 
   switch (normalized) {
     case "todo":
-      return "text-gray-500 bg-gray-300";
+      return "text-status-todo bg-status-todoBg";
 
     case "inprogress":
-      return "text-blue-600 bg-blue-400";
+      return "text-status-progress bg-status-progressBg";
 
     case "done":
     case "completed":
-      return "text-green-600 bg-green-300";
+      return "text-status-done bg-status-doneBg";
 
     default:
-      return "text-black-600 bg-black";
+      return "text-content-secondary bg-hoverBg";
   }
 };
 
