@@ -13,7 +13,22 @@ git clone https://github.com/your-username/taskflow-subhasish.git
 cd taskflow--subhasish-rathi-
 ```
 ```bash
-cp .env.example .env
+cd frontend
+cp .env
+VITE_API_URL=http://localhost:4000/api/v1
+```
+```bash
+cd ..
+cd backend
+cp .env
+PORT=4000
+JWT_SECRET=your_jwt_secret_key
+NODE_ENV=production
+```
+
+```bash
+back to root folder
+then run below command
 ```
 
 ### Launch the Application
